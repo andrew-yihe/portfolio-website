@@ -38,6 +38,18 @@
       font-weight: 700;
 }
 
+@font-face {
+      font-family: 'HelveticaNeue Bold';
+      src: url('HelveticaNeue-Bold.woff');
+      font-style: normal;
+}
+
+@font-face {
+      font-family: 'HelveticaNeue';
+      src: url('HelveticaNeue-Light.woff');
+      font-style: normal;
+}
+
 .one-page {
       overflow: hidden;
 }
@@ -98,10 +110,9 @@
       top: 50%;
       left: 50%;
       font-family: 'Roboto', sans-serif;
-      font-size: 18vmin;
+      font-size: 8vmin;
       transform: translate(-50%, -50%);
       color: #121111;
-      opacity: 20%;
 }
 
 .loading .counter h1:after {
@@ -146,9 +157,7 @@ section {
       justify-content: space-around;
       font-size: 3vmin;
       overflow: hidden;
-      background: #F4EDE4;
-      animation: BGcolour 8s infinite;
-      animation-direction: alternate-reverse;
+      background: #FFFFFF;
 }
 
 
@@ -358,7 +367,7 @@ section {
       width: 75vmin;
       background: white;
       border-radius: 50%;
-      border: 1px solid #707070;
+      border: 1px solid #c2c2c2;
       z-index: 0; 
       opacity: 0;
       left: ;
@@ -367,7 +376,12 @@ section {
 
 /*-----------About Me------------*/
 .aboutText {
-      font-family: 'Optima Medium',sans-serif;
+      font-family: 'HelveticaNeue',sans-serif;
+      transform: scale(1, 0.9);
+      -webkit-transform: scale(1, 0.9); /* Safari and Chrome */
+      -moz-transform: scale(1, 0.9); /* Firefox */
+      -ms-transform: scale(1, 0.9); /* IE 9+ */
+      -o-transform: scale(1, 0.9); /* Opera */
       font-weight: 100;
       color: #121111;
       font-size: 3vmin;
@@ -382,7 +396,7 @@ section {
 /*-----------Contact------------*/
 #contactText{
       position:absolute;
-      font-family: 'Optima Medium',sans-serif;
+      font-family: 'HelveticaNeue Bold',sans-serif;
       font-weight: 100;
       z-index: 5;
       font-size: 4vmin;
@@ -407,10 +421,10 @@ section {
 /*-----------Project Menu------------*/
 #projectMenuContainer {
       position: absolute;
-      font-family: 'Optima Medium',sans-serif;
+      font-family: 'HelveticaNeue Bold',sans-serif;
       font-weight: 100;
       z-index: 1;
-      font-size: 3vw;
+      font-size: 2.5vw;
       line-height: 200%;
       text-align: center;
       display: none;
@@ -439,7 +453,7 @@ section {
 
 #projectLineLeft {
       position: absolute;
-      background: #707070;
+      background: #121111;
       height: 2px;
       width: 0vw;
       left: 0;
@@ -449,7 +463,7 @@ section {
 
 #projectLineRight {
       position: absolute;
-      background: #707070;
+      background: #121111;
       height: 2px;
       width: 0vw;
       right: 0;
@@ -459,6 +473,7 @@ section {
 
 #ProjectBallBtm {
       position: absolute;
+      border: 1px solid #c2c2c2;
       height: 100vmin;
       width: 100vmin;
       background: white;
@@ -467,6 +482,7 @@ section {
       bottom: -100vmin;
       transition: 2s ease;
       opacity: 0;
+
 }
 
 /*Mobile*/

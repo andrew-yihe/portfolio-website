@@ -45,7 +45,7 @@ function showAbout () {
       gsap.to("#projectLineRight", {width: "0vw"});
       
       gsap.to(text, {duration: 1, opacity: 1, delay: 0.3, ease: "power1"});
-      gsap.to(ball, {duration: 3, scale: 2, x: "-50vw",y: "0vw", ease: "power4", border: "none"});
+      gsap.to(ball, {duration: 3, height: "150vmin", width: "150vmin", x: "-50vw",y: "0vw", ease: "power4"});
       name.style.pointerEvents = "none";
       gsap.to(socialBox, {x: "0"});
 
@@ -67,7 +67,7 @@ function showHome () {
       
       name.style.display = "block";
       gsap.to(name, {duration: 0.5, opacity: 1, delay: 0.3, ease: "power1"});
-      gsap.to(ball, {duration: 3, scale: 1, x: "0", y: "0vw", ease: "power4", border: "1px solid #707070"});
+      gsap.to(ball, {duration: 3, height: "75vmin", width: "75vmin", x: "0", y: "0vw", ease: "power4"});
       gsap.to(socialBox, {x: "0"});
 
       gsap.to("#ProjectBallBtm", {bottom: "-100vmin", opacity: 0});
@@ -88,7 +88,7 @@ function showContact () {
       gsap.to("#projectLineRight", {width: "0vw"});
       
       gsap.to(socialBox, {duration: 1, opacity: 1, delay: 0.3, x: "0", ease: "power1"});
-      gsap.to(ball, {duration: 3.5, scale: 3, x: "30vw", y: "60vw", ease: "power4", border: "none"});
+      gsap.to(ball, {duration: 3.5, height: "225vmin", width: "225vmin", x: "30vw", y: "60vw", ease: "power4"});
       name.style.pointerEvents = "none";
       
       gsap.to("#ProjectBallBtm", {bottom: "-100vmin", opacity: 0});
@@ -107,7 +107,7 @@ function showProjectMenu () {
       
       projectMenu.style.display = "block";
       gsap.to(projectMenu, {duration: 1, opacity: 1, delay: 0.3, ease: "power1"});
-      gsap.to(ball, {duration: 2, scale: 2, x: "0", y: "-50vw", ease: "power4", border: "none"});
+      gsap.to(ball, {duration: 2, height: "150vmin", width: "150vmin", x: "0", y: "-50vw", ease: "power4"});
 
       gsap.to("#ProjectBallBtm", {bottom: "-70vmin", opacity: 1});
       
