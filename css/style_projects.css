@@ -1,0 +1,63 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    color: #121111;
+    background: #F4EDE4;
+    overflow: hidden;
+    cursor: none;
+}
+
+@font-face {
+      font-family: 'Optima Medium';
+      src: url('Optima Medium.woff');
+}
+
+.cursor {
+      width: 2.5rem;
+      height: 2.5rem;
+      border: 2px solid #121111;
+      border-radius: 50%;
+      position: fixed;
+      top:var (--y,0);
+      left:var (--x,0);
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      pointer-events: none;
+      transition: all 0.3s ease;
+      transition-property: background, transform;
+      
+}
+
+.expand {
+      animation: cursorClick 0.5s ease forwards;
+      
+}
+
+@keyframes cursorClick {
+      0% {
+            transform: translate(-50%, -50%) scale(1);
+            border: 2px solid #121111;
+            background-color: rgba(18, 17, 17, 0.2);
+      }
+      70% {
+            transform: translate(-50%, -50%) scale(1.8);
+            border:0px solid #121111;
+            opacity: 0;
+      }
+      100% {
+            transform: translate(-50%, -50%) scale(1);
+            border: 2px solid #121111;
+      }
+      
+}
+
+.cursor-grow {
+      transform: translate(-50%, -50%) scale(3);
+      background: white;
+      border: none;
+      mix-blend-mode: difference;
+}
+

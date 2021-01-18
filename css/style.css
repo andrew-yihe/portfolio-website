@@ -1,0 +1,4708 @@
+* {
+      margin: 0;
+      box-sizing: border-box;
+      cursor: none;
+}
+
+
+@font-face {
+      font-family: 'Optima Medium';
+      src: url('Optima Medium.woff');
+      font-weight: 800;
+}
+
+@font-face {
+      font-family: 'Optima Reg';
+      src: url('Optima Reg.woff');
+      font-weight: 800;
+}
+
+@font-face {
+      font-family: 'Montserrat';
+      src: url('Montserrat-500.woff');
+      font-style: normal;
+      font-weight: 500;
+}
+
+@font-face {
+      font-family: 'Poppins';
+      src: url('Poppins-500.woff');
+      font-style: normal;
+      font-weight: 500;
+}
+
+@font-face {
+      font-family: 'Roboto';
+      src: url('Roboto-700.woff');
+      font-style: normal;
+      font-weight: 700;
+}
+
+.one-page {
+      overflow: hidden;
+}
+
+.cursor {
+      width: 2.5rem;
+      height: 2.5rem;
+      border: 2px solid #121111;
+      border-radius: 50%;
+      position: fixed;
+      top:var (--y,0);
+      left:var (--x,0);
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      pointer-events: none;
+      transition: all 0.3s ease;
+      transition-property: background, transform;
+      
+}
+
+.expand {
+      animation: cursorClick 0.3s ease forwards;
+}
+
+@keyframes cursorClick {
+      0% {
+            transform: translate(-50%, -50%) scale(1);
+            background-color: rgba(18, 17, 17, 0.2);
+      }
+      40% {
+            transform: translate(-50%, -50%) scale(0.6);
+            opacity: 0;
+      }
+      100% {
+            transform: translate(-50%, -50%) scale(1);
+      }
+      
+}
+
+.cursor-grow {
+      transform: translate(-50%, -50%) scale(3);
+      background: white;
+      border: none;
+      mix-blend-mode: difference;
+}
+/* ------------loader---------------*/
+.loading {
+      position: absolute;
+      background: white;
+      background-size: 100vw;
+      width: 100vw;
+      height: 100vh;
+      z-index: 8;
+}
+
+.loading .counter h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-family: 'Roboto', sans-serif;
+      font-size: 18vmin;
+      transform: translate(-50%, -50%);
+      color: #121111;
+      opacity: 20%;
+}
+
+.loading .counter h1:after {
+      content: "%";
+}
+
+#loading-shade {
+      position: absolute;
+      background: white;
+      height: 100vh;
+      right: 0;
+      width: 100vw;
+      z-index: 6;
+      transition: 0.8s ease-in;
+}
+
+#EnterBall2 {
+      overflow: hidden;
+      position: absolute;
+      height: 75vmin;
+      width: 75vmin;
+      background: white;
+      border-radius: 50%;
+      border: 1px solid #707070;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1; 
+      opacity: 0;
+}
+
+
+/* ------------section---------------*/
+section {
+      overflow: scroll;
+      width: 100%;
+      height: 100vh;
+      padding: 10vh 10vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      font-size: 3vmin;
+      overflow: hidden;
+      background: #F4EDE4;
+      animation: BGcolour 8s infinite;
+      animation-direction: alternate-reverse;
+}
+
+
+
+/* home*/
+#home {
+      position: relative;
+      background-size: cover;
+      color: #121111;
+}
+
+
+#name{
+      margin: 0;
+      position: absolute;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: 100;
+      color: #121111;
+      white-space: nowrap;
+      font-size: 15vw;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      transition: 0.5s ease;
+      display: block;
+      user-select: none;
+}
+
+#name:hover{
+      opacity: 50%;
+      transform: translate(-50%, -50%) scale(1.1, 1.1);
+}
+
+#name:hover ~ #hoverline{
+      width: 50vw;
+      height: 0.5vw;
+}
+
+.menu{
+      font-style: italic;
+      font-family: 'Roboto', sans-serif;
+      color: #121111;
+      z-index: 2;
+      user-select: none;
+}
+
+
+#back {
+      position: absolute;
+      top: 5vmin;
+      left: 25%;
+      display: inline-block;
+      transform: translate(-50%, 0%) scale(1.5, 1);
+      -webkit-transform: translate(-50%, 0%) scale(1.5, 1); /* Safari and Chrome */
+      -moz-transform: translate(-50%, 0%) scale(1.5, 1); /* Firefox */
+      -ms-transform: translate(-50%, 0%) scale(1.5, 1); /* IE 9+ */
+      -o-transform: translate(-50%, 0%) scale(1.5, 1); /* Opera */
+      transition: 0.3s ease;
+}
+
+#back:hover {
+      transform: translate(-50%, 0%) scale(3, 1.5);
+      opacity: 0.5;
+}
+#back:active {
+      color: white;
+      transform: translate(-50%, 0%) scale(1, 0.5);
+}
+
+
+#project {
+      position: absolute;
+      bottom: 5vmin;
+      left: 25%;
+      transform: translate(-50%, 0%) scale(1.5, 1);
+      -webkit-transform: translate(-50%, 0%) scale(1.5, 1); /* Safari and Chrome */
+      -moz-transform: translate(-50%, 0%) scale(1.5, 1); /* Firefox */
+      -ms-transform: translate(-50%, 0%) scale(1.5, 1); /* IE 9+ */
+      -o-transform: translate(-50%, 0%) scale(1.5, 1); /* Opera */
+      transition: 0.3s ease;
+}
+#project:hover {
+      transform: translate(-50%, 0%) scale(3, 1.5);
+      opacity: 0.5;
+}
+#project:active {
+      color: white;
+      transform: translate(-50%, 0%) scale(1, 0.5);
+}
+
+#about {
+      position: absolute;
+      top: 5vmin;
+      right: 25%;
+      transform: translate(50%, 0%) scale(1.5, 1);
+      -webkit-transform: translate(50%, 0%) scale(1.5, 1); /* Safari and Chrome */
+      -moz-transform: translate(50%, 0%) scale(1.5, 1); /* Firefox */
+      -ms-transform: translate(50%, 0%) scale(1.5, 1); /* IE 9+ */
+      -o-transform: translate(50%, 0%) scale(1.5, 1); /* Opera */
+      transition: 0.3s ease;
+}
+
+#about:hover {
+      transform: translate(50%, 0%) scale(3, 1.5);
+      opacity: 0.5;
+}
+#about:active {
+      color: white;
+      transform: translate(50%, 0%) scale(1, 0.5);
+}
+
+#contact {
+      position: absolute;
+      bottom: 5vmin;
+      right: 25%;
+      transform: translate(50%, 0%) scale(1.5, 1);
+      -webkit-transform: translate(50%, 0%) scale(1.5, 1); /* Safari and Chrome */
+      -moz-transform: translate(50%, 0%) scale(1.5, 1); /* Firefox */
+      -ms-transform: translate(50%, 0%) scale(1.5, 1); /* IE 9+ */
+      -o-transform: translate(50%, 0%) scale(1.5, 1); /* Opera */
+      transition: 0.3s ease;
+}
+
+#contact:hover {
+      transform: translate(50%, 0%) scale(3, 1.5);
+      opacity: 0.5;
+}
+#contact:active {
+      color: white;
+      transform: translate(50%, 0%) scale(1, 0.5);
+}
+
+#upperline {
+      position: absolute;
+      background-color: #FF0000;
+      width: 100%;
+      height: 2px;
+      top: 12vmin;
+      z-index: 1;
+}
+
+#lowerline {
+      position: absolute;
+      background-color: #FF0000;
+      width: 100%;
+      height: 2px;
+      bottom: 12vmin;
+      z-index: 1;
+}
+
+#TopMidline {
+      position: absolute;
+      background-color: #FF0000;
+      width: 2px;
+      height: 12vmin;
+      top: 0%;
+      z-index: 1;
+}
+
+#BtmMidline {
+      position: absolute;
+      background-color: #FF0000;
+      width: 2px;
+      height: 12vmin;
+      bottom: 0%;
+      z-index: 1;
+}
+
+#hoverline{
+      position: absolute;
+      background-color: #121111;
+      width: 15vw;
+      height: 1vw;
+      right: 0%;
+      bottom: 25vmin;
+      transition: 0.7s ease;
+      /display: none;
+      z-index: 1;
+}
+
+@keyframes BGcolour {
+      0% {
+            background-color: #F4EDE4;
+      }
+
+      25% {
+            background-color: #EBE1D9;
+      }
+
+      50% {
+            background-color: #D6D4D2;
+      }
+
+      75% {
+            background-color: #E0D0C3;
+      }
+
+      100% {
+            background-color: #F4EDE4;
+      }
+}
+
+#ball {
+      position: absolute;
+      height: 75vmin;
+      width: 75vmin;
+      background: white;
+      border-radius: 50%;
+      border: 1px solid #707070;
+      z-index: 0; 
+      opacity: 0;
+      left: ;
+}
+
+
+/*-----------About Me------------*/
+.aboutText {
+      font-family: 'Optima Medium',sans-serif;
+      font-weight: 100;
+      color: #121111;
+      font-size: 3vmin;
+      display: none;
+      opacity: 0;
+      position: absolute;
+      line-height: 130%;
+      width: 80vmin;
+      right: 10vmin;
+}
+
+/*-----------Contact------------*/
+#contactText{
+      position:absolute;
+      font-family: 'Optima Medium',sans-serif;
+      font-weight: 100;
+      z-index: 5;
+      font-size: 4vmin;
+      transition: 0.3s ease;
+      opacity: 0;
+      display: none;
+}
+
+.contactLinks a {
+      color: #121111;
+      text-decoration: none;
+      margin: 3vmin;
+      transition: 0.3s ease;
+      user-select: none;
+}
+
+.contactLinks a:hover {
+      opacity: 0.5;
+      text-decoration: underline;
+}
+
+/*-----------Project Menu------------*/
+#projectMenuContainer {
+      position: absolute;
+      font-family: 'Optima Medium',sans-serif;
+      font-weight: 100;
+      z-index: 1;
+      font-size: 3vw;
+      line-height: 200%;
+      text-align: center;
+      display: none;
+      opacity: 0;
+      color: #121111;
+}
+
+.projectMenu {
+      transition: 0.3s ease;
+      user-select: none;
+}
+
+.projectMenu:hover {
+      transform: scale(1.2, 1.2);
+}
+
+.projectMenu:active {
+      color: white;
+      transform: scale(0.6, 0.6);
+}
+
+#projectmenu1,#projectmenu2,#projectmenu3 {
+      color: #121111;
+      text-decoration: none;
+}
+
+#projectLineLeft {
+      position: absolute;
+      background: #707070;
+      height: 2px;
+      width: 0vw;
+      left: 0;
+      z-index: 5;
+      transition: 0.5s ease;
+}
+
+#projectLineRight {
+      position: absolute;
+      background: #707070;
+      height: 2px;
+      width: 0vw;
+      right: 0;
+      z-index: 5;
+      transition: 0.5s ease;
+}
+
+#ProjectBallBtm {
+      position: absolute;
+      height: 100vmin;
+      width: 100vmin;
+      background: white;
+      border-radius: 50%;
+      z-index: 0; 
+      bottom: -100vmin;
+      transition: 2s ease;
+      opacity: 0;
+}
+
+/*Mobile*/
+@media screen and (max-width: 600px) {
+      
+      .one-page {
+            height: 100vh;
+            width: 100vw;
+      }
+      
+      .loading {
+            overflow: hidden;
+      }
+      
+      .EnterBall1 {
+            overflow: hidden;
+      }
+
+      .cursor {
+            display: none;
+      }
+      
+      #hoverline {
+            display: none;
+      }
+      
+      #back {
+            font-size: 7vmin;
+            text-align: center;
+            left: 50%;
+            top: 10vmin;
+      }
+      #about {
+            font-size: 7vmin;
+            text-align: center;
+            right: 50%;
+            top: 30vmin;
+      }
+      #project {
+            font-size: 7vmin;
+            text-align: center;
+            left: 50%;
+            bottom: 30vmin;
+      }
+      #contact {
+            font-size: 7vmin;
+            text-align: center;
+            right: 50%;
+            bottom: 10vmin;
+      }
+      
+      #upperline {
+            top: 45vmin;
+      }
+
+      #lowerline {
+            bottom: 45vmin;
+      }
+
+      #TopMidline {
+            display: none;
+      }
+
+      #BtmMidline {
+            display: none;
+      }
+      
+      #projectLineLeft {
+            display: none;
+      }
+
+      #projectLineRight {
+            display: none;
+      }
+      
+      #projectMenuContainer {
+            font-size: 7vmin;
+            line-height: 200%;
+      }
+      
+      a span {
+            display: block;
+      }
+      
+      #contactText {
+            font-size: 7vmin;
+            text-align: center;
+            line-height: 15vmin;
+      }
+
+      .contactLinks a {
+            display: block;
+      }
+
+      .aboutText {
+            overflow-y: scroll;
+            font-size: 16px;
+            width: 70vmin;
+            right: auto;
+      }
+
+}
+
+
+/*---------Project Page General Structure----------*/
+.mobile-project-page {
+      display: none;
+}
+
+.container img {
+      width: 100%;
+}
+
+
+#project-page-wrapper {
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      background: #F4EDE4;
+      animation: BGcolour 8s infinite;
+      animation-direction: alternate-reverse;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: 1fr 0.6fr;
+      grid-template-rows: 1.5fr 2.1fr;
+      grid-template-areas:
+            "box1 box2"
+            "box3 box3";
+}
+
+.projectTitle {
+      grid-area: box1;
+      font-family: 'Optima Medium', sans-serif;
+      color: #121111;
+      font-size: 30vmin;
+      margin: 8vmin;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      z-index: 2;
+}
+
+.projectNav {
+      grid-area: box2;
+      font-family: 'Optima Medium', sans-serif;
+      font-size: 3vmin;
+      color: #121111;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      
+      
+}
+
+.aNav {
+      margin: 3vmin;
+      transition: 0.3s ease;
+      color: #121111;
+      text-decoration: none;
+      white-space: nowrap;
+}
+
+.aNav:hover {
+      opacity: 0.5;
+      text-decoration: underline;
+}
+
+.aNav:active {
+      color: white;
+}
+
+.container {
+      grid-area: box3;
+}
+
+.block {
+      position: relative;
+      width: 70vmin;
+      height: 45vmin;
+      margin: 0vmin 20vmin 0vmin 8vmin;
+      transition: 0.5s ease;
+      filter: grayscale(100%);
+}
+
+.block:hover {
+      filter: none;
+      background-size: 100%;
+      filter: grayscale(0%);
+}
+
+h1 {
+      position: relative;
+      font-family: 'Poppins', sans-serif;
+      font-size: 3vmin;
+      color: #121111;
+      top: 47vmin;
+      text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+
+      #project-page-wrapper {
+            display: none;
+      }
+
+      
+.mobile-project-page {
+      overflow-x: hidden;
+      overflow-y: scroll;
+      display: block;
+      height: 100vh;
+      background: #F4EDE4;
+      animation: BGcolour 8s infinite;
+      animation-direction: alternate-reverse;
+}
+
+
+.mobile-title {
+      font-family: 'Optima Medium', sans-serif;
+      color: #121111;
+      font-size: 22vmin;
+      text-align: center;
+      padding: 15vmin;
+}
+
+.mobile-menu {
+      font-family: 'Optima Medium', sans-serif;
+      color: #121111;
+      font-size: 4vmin;
+      text-align: center;
+      padding: 2vmin;
+}
+
+.mobile-empty {
+      padding: 12vmin;
+}
+
+.img-container {
+      height: 50vmin;
+      margin: 5vmin 10vmin 3vmin 10vmin;
+}
+
+.img-disc {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3vmin;
+      color: #121111;
+      text-align: center;
+}
+}
+
+/*---------AR/VR----------*/
+
+.vr-1 {
+    background: url(elliot.jpg) no-repeat 50% 50%;
+    background-size: 110% ;
+}
+
+.vr-2 {
+    background: url(lighthouse.png) no-repeat 50% 50%;
+    background-size: 110% ;
+}
+
+.vr-3 {
+    background: url(cyber.png) no-repeat 50% 50%;
+    background-size: 110% ;
+}
+
+.vr-4 {
+    background: url(mind.png) no-repeat 50% 50%;
+    background-size: 110% ;
+}
+
+/*--mobile--*/
+
+#vr-img1 {
+    background: url(elliot.jpg) no-repeat 50% 50%;
+    background-size: 110% ;
+}
+
+#vr-img2 {
+    background: url(lighthouse.png) no-repeat 50% 50%;
+    background-size: 110% ;
+}
+
+#vr-img3 {
+    background: url(cyber.png) no-repeat 50% 50%;
+    background-size: 110% ;
+}
+
+#vr-img4 {
+    background: url(mind.png) no-repeat 50% 50%;
+    background-size: 110% ;
+}
+
+
+
+/*---------Visual----------*/
+#visualTitle {
+      font-size: 15vmin;
+}
+
+.visual-1 {
+    background: url(paws.png) no-repeat 50% 30%;
+    background-size: 110% ;
+}
+
+.visual-2 {
+    background: url(lingo.png) no-repeat 50% 50%;
+    background-size: 110% ;
+}
+
+.visual-3 {
+    background: url(iv.png) no-repeat 0% 0%;
+    background-size: 110% ;
+}
+
+.visual-4 {
+    background: url(sgm.png) no-repeat 50% 70%;
+    background-size: 110% ;
+}
+
+/*--mobile--*/
+
+#visual-img1 {
+    background: url(paws.png) no-repeat 50% 30%;
+    background-size: 110% ;
+}
+
+#visual-img2 {
+    background: url(lingo.png) no-repeat 50% 50%;
+    background-size: 110% ;
+}
+
+#visual-img3 {
+    background: url(iv.png) no-repeat 0% 0%;
+    background-size: 110% ;
+}
+
+#visual-img4 {
+    background: url(sgm.png) no-repeat 50% 70%;
+    background-size: 110% ;
+}
+
+/*---------Game----------*/
+.game-1 {
+    background: url(cabaret.PNG) no-repeat 50% 30%;
+    background-size: 110% ;
+}
+
+.game-2 {
+    background: url(pumpkin.png) no-repeat 50% 0%;
+    background-size: 110% ;
+}
+
+.game-3 {
+    background: url(oasis.jpg) no-repeat 50% 80%;
+    background-size: 110% ;
+}
+
+.game-4 {
+    background: url(cave.png) no-repeat 50% 70%;
+    background-size: 110% ;
+}
+
+.game-5 {
+    background: url(neon.JPG) no-repeat 50% 50%;
+    background-size: 110% ;
+}
+
+.game-6 {
+    background: url(island.jpeg) no-repeat 50% 70%;
+    background-size: 110% ;
+}
+
+/*--mobile--*/
+
+#game-img1 {
+    background: url(cabaret.PNG) no-repeat 50% 30%;
+    background-size: 100% ;
+}
+
+#game-img2 {
+    background: url(pumpkin.png) no-repeat 50% 0%;
+    background-size: 100% ;
+}
+
+#game-img3 {
+    background: url(oasis.jpg) no-repeat 50% 100%;
+    background-size: 100% ;
+}
+
+#game-img4 {
+    background: url(cave.png) no-repeat 50% 50%;
+    background-size: 100% ;
+}
+
+#game-img5 {
+    background: url(neon.JPG) no-repeat 50% 0%;
+    background-size: 100% ;
+}
+
+#game-img6 {
+    background: url(island.jpeg) no-repeat 50% 50%;
+    background-size: 100% ;
+}
+
+
+/*---------project-pages----------*/
+#project-ball {
+      position: absolute;
+      height: 100vmin;
+      width: 100vmin;
+      background: white;
+      z-index: 0;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      left: 50%;
+}
+
+#project-vid {
+      width: 100%;
+}
+
+.back-button {
+      text-decoration: none;
+      color: #121111;
+}
+
+.back-button:hover {
+      transform: translate(-50%, 0%) scale(3, 1.5);
+      opacity: 0.5;
+}
+.back-button:active {
+      color: white;
+      transform: translate(-50%, 0%) scale(1, 0.5);
+}
+
+.next-button:hover {
+      text-decoration:line-through;
+      
+}
+
+
+/*---------elliot----------*/
+
+.elliot {
+      overflow-x: hidden;
+      color: #121111;
+      display: grid;
+      background: #F4EDE4;
+      grid-template-columns: 50% 50%;
+      /grid-template-rows: 1fr 1fr;
+      grid-template-areas: 
+            "box1 box1"
+            "box2 box2"
+            "box3 box4"
+            "box5 box5"
+            "box7 box8"
+            "box9 box10"
+            "box11 box11"
+            "box12 box13"
+            "box14 box14"; 
+}
+
+.elliot img {
+      width: 100%;
+}
+
+.elliot .box1 {
+      grid-area: box1;
+      padding: 5vmin;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: 100;
+      font-size: 3vmin;
+}
+
+.elliot .box2 {
+      grid-area: box2;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: "regular";
+      font-size: 8vmin;
+      align-items: center;
+      text-align: center;
+      line-height: 1.2;
+      padding: 20vmin 5vmin 0vmin 5vmin;
+      z-index: 1;
+}
+.elliot .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 5vmin 5vmin 20vmin 5vmin;
+      
+
+}
+.elliot .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 5vmin 5vmin 20vmin 5vmin;
+}
+.elliot .box5 {
+      grid-area: box5;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.elliot .box7 {
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+}
+.elliot .box8 {
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 5vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+
+}
+.elliot .box9 {
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+
+}
+.elliot .box10 {
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 5vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+}
+.elliot .box11 {
+      grid-area: box11;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 9vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 5vmin;
+      opacity: 50%;
+}
+.elliot .box12 {
+      grid-area: box12;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.elliot .box13 {
+      grid-area: box13;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+.elliot .box14 {
+      grid-area: box14;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20vmin 5vmin 20vmin 5vmin;
+}
+
+@media screen and (max-width: 900px) {
+      .elliot {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-areas: 
+            "box1"
+            "box2"
+            "box3"
+            "box4"
+            "box5"
+            "box7"
+            "box8"
+            "box9"
+            "box10"
+            "box11"
+            "box12"
+            "box13"
+            "box14"; 
+      }
+      .elliot .box1 {
+      font-size: 15px;
+}
+      .elliot .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 5vmin;
+      }
+      .elliot .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 0vmin 5vmin 20vmin 5vmin;
+      }
+      .elliot .box7 {
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5vmin;
+}
+.elliot .box8 {
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+
+}
+.elliot .box9 {
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+}
+.elliot .box10 {
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+}
+.elliot .box14 {
+      font-size: 10px;
+}
+}
+
+/*---------lighthouse----------*/
+
+.lighthouse {
+      overflow-x: hidden;
+      color: #121111;
+      display: grid;
+      background: #F4EDE4;
+      grid-template-columns: 50% 50%;
+      /grid-template-rows: 1fr 1fr;
+      grid-template-areas: 
+            "box1 box1"
+            "box2 box2"
+            "box3 box3"
+            "box4 box4"
+            "box5 box5"
+            "box7 box8"
+            "box9 box10"
+            "box11 box11"
+            "box12 box13"
+            "box13-add box13-add"
+            "box14 box14"; 
+}
+
+.lighthouse img {
+      width: 100%;
+}
+
+.lighthouse .box1 {
+      grid-area: box1;
+      padding: 5vmin;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: 100;
+      font-size: 3vmin;
+}
+
+.lighthouse .box2 {
+      grid-area: box2;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: "regular";
+      font-size: 14vmin;
+      align-items: center;
+      text-align: center;
+      line-height: 1.2;
+      padding: 20vmin 5vmin 0vmin 5vmin;
+      z-index: 1;
+}
+.lighthouse .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 10vmin 5vmin 2vmin 5vmin;
+      
+
+}
+.lighthouse .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 2vmin 5vmin 20vmin 5vmin;
+}
+.lighthouse .box5 {
+      grid-area: box5;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.lighthouse .box6 {
+      grid-area: box6;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.lighthouse .box7 {
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+}
+.lighthouse .box8 {
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 5vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+
+}
+.lighthouse .box9 {
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+
+}
+.lighthouse .box10 {
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 5vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+}
+.lighthouse .box11 {
+      grid-area: box11;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 9vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 5vmin;
+      opacity: 50%;
+}
+.lighthouse .box12 {
+      grid-area: box12;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.lighthouse .box13 {
+      grid-area: box13;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.lighthouse .box13-add {
+      grid-area: box13-add;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.lighthouse .box14 {
+      grid-area: box14;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20vmin 5vmin 20vmin 5vmin;
+}
+
+@media screen and (max-width: 900px) {
+      .lighthouse {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-areas: 
+            "box1"
+            "box2"
+            "box3"
+            "box4"
+            "box5"
+            "box7"
+            "box8"
+            "box9"
+            "box10"
+            "box11"
+            "box12"
+            "box13"
+            "box13-add"
+            "box14"; 
+      }
+      .lighthouse .box1 {
+      font-size: 15px;
+}
+      .lighthouse .box2 {
+      font-size: 10vmin;
+}
+      .lighthouse .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 5vmin;
+      }
+      .lighthouse .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 0vmin 5vmin 20vmin 5vmin;
+      }
+      .lighthouse .box6 {
+      grid-area: box6;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+      .lighthouse .box7 {
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5vmin;
+}
+.lighthouse .box8 {
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+
+}
+.lighthouse .box9 {
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+}
+.lighthouse .box10 {
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+}
+.lighthouse .box14 {
+      font-size: 10px;
+}
+}
+
+/*---------cybercity----------*/
+
+.cyber {
+      overflow-x: hidden;
+      color: #121111;
+      display: grid;
+      background: #FFFFFF;
+      grid-template-columns: 50% 50%;
+      grid-template-areas: 
+            "box1 box1"
+            "box2 box2"
+            "box3 box4"
+            "box5 box6"
+            "box7 box8"
+            "box9 box10"
+            "box11 box11"
+            "box12 box13"
+            "box14 box14"; 
+}
+
+.cyber img {
+      width: 100%;
+}
+
+.cyber .box1 {
+      grid-area: box1;
+      padding: 5vmin;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: 100;
+      font-size: 3vmin;
+}
+
+.cyber .box2 {
+      grid-area: box2;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: "regular";
+      font-size: 14vmin;
+      align-items: center;
+      text-align: center;
+      line-height: 1.2;
+      padding: 20vmin 5vmin 0vmin 5vmin;
+      z-index: 1;
+}
+.cyber .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 5vmin 5vmin 20vmin 5vmin;
+      
+
+}
+.cyber .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 5vmin 5vmin 20vmin 5vmin;
+}
+.cyber .box5 {
+      background: #000000;
+      grid-area: box5;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.cyber .box6 {
+      background: #000000;
+      grid-area: box6;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.cyber .box7 {
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+}
+.cyber .box8 {
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 5vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+
+}
+.cyber .box9 {
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+
+}
+.cyber .box10 {
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 5vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+}
+.cyber .box11 {
+      grid-area: box11;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 9vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 5vmin;
+      opacity: 50%;
+}
+.cyber .box12 {
+      background: #000000;
+      grid-area: box12;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.cyber .box13 {
+      background: #000000;
+      grid-area: box13;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+.cyber .box14 {
+      grid-area: box14;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20vmin 5vmin 20vmin 5vmin;
+}
+
+@media screen and (max-width: 900px) {
+      .cyber {
+      overflow-x: hidden;
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-areas: 
+            "box1"
+            "box2"
+            "box3"
+            "box4"
+            "box5"
+            "box6"
+            "box7"
+            "box8"
+            "box9"
+            "box10"
+            "box11"
+            "box12"
+            "box13"
+            "box14"; 
+      }
+      .cyber .box1 {
+      font-size: 15px;
+}
+      .cyber .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 5vmin;
+      }
+      .cyber .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 0vmin 5vmin 20vmin 5vmin;
+      }
+      .cyber .box6 {
+      grid-area: box6;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+      .cyber .box7 {
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5vmin;
+}
+.cyber .box8 {
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+
+}
+.cyber .box9 {
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+}
+.cyber .box10 {
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+}
+.cyber .box14 {
+      font-size: 10px;
+}
+}
+
+/*---------mind space----------*/
+
+.mind {
+      overflow-x: hidden;
+      color: #121111;
+      display: grid;
+      background: #F4EDE4;
+      grid-template-columns: 50% 50%;
+      /grid-template-rows: 1fr 1fr;
+      grid-template-areas: 
+            "box1 box1"
+            "box2 box2"
+            "box3 box4"
+            "box5 box5"
+            "box7 box8"
+            "box9 box10"
+            "box11 box11"
+            "box12 box13"
+            "box13-add box13-add"
+            "box14 box14"; 
+}
+
+.mind img {
+      width: 100%;
+}
+
+.mind .box1 {
+      grid-area: box1;
+      padding: 5vmin;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: 100;
+      font-size: 3vmin;
+}
+
+.mind .box2 {
+      grid-area: box2;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: "regular";
+      font-size: 8vmin;
+      align-items: center;
+      text-align: center;
+      line-height: 1.2;
+      padding: 20vmin 5vmin 0vmin 5vmin;
+      z-index: 1;
+}
+.mind .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 5vmin 5vmin 20vmin 5vmin;
+      
+
+}
+.mind .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 5vmin 5vmin 20vmin 5vmin;
+}
+.mind .box5 {
+      grid-area: box5;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.mind .box6 {
+      grid-area: box6;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.mind .box7 {
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+}
+.mind .box8 {
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 5vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+
+}
+.mind .box9 {
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+
+}
+.mind .box10 {
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 5vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+}
+.mind .box11 {
+      grid-area: box11;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 9vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 5vmin;
+      opacity: 50%;
+}
+.mind .box12 {
+      grid-area: box12;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.mind .box13 {
+      grid-area: box13;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.mind .box14 {
+      grid-area: box14;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20vmin 5vmin 20vmin 5vmin;
+}
+
+@media screen and (max-width: 900px) {
+      .mind {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-areas: 
+            "box1"
+            "box2"
+            "box3"
+            "box4"
+            "box5"
+            "box7"
+            "box8"
+            "box9"
+            "box10"
+            "box11"
+            "box12"
+            "box13"
+            "box13-add"
+            "box14"; 
+      }
+      .mind .box1 {
+      font-size: 15px;
+}
+      .mind .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 5vmin;
+      }
+      .mind .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 0vmin 5vmin 20vmin 5vmin;
+      }
+      .mind .box6 {
+      grid-area: box6;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+      .mind .box7 {
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5vmin;
+}
+.mind .box8 {
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+
+}
+.mind .box9 {
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+}
+.mind .box10 {
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+}
+.mind .box14 {
+      font-size: 10px;
+}
+}
+
+/*---------paws----------*/
+
+.paws {
+      overflow-x: hidden;
+      color: #121111;
+      display: grid;
+      background: #F4EDE4;
+      grid-template-columns: 50% 50%;
+      /grid-template-rows: 1fr 1fr;
+      grid-template-areas: 
+            "box1 box1"
+            "box2 box2"
+            "box3 box3"
+            "box4 box4"
+            "box4-1 box4-2"
+            "box5 box6"
+            "box7 box8"
+            "box9 box10"
+            "box11 box11"
+            "box12 box13"
+            "box14 box14"; 
+}
+
+.paws img {
+      width: 100%;
+}
+
+.paws .box1 {
+      grid-area: box1;
+      padding: 5vmin;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: 100;
+      font-size: 3vmin;
+}
+
+.paws .box2 {
+      color: #FEC72E;
+      grid-area: box2;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: "regular";
+      font-size: 20vmin;
+      align-items: center;
+      text-align: center;
+      line-height: 1.2;
+      padding: 5vmin 5vmin 0vmin 5vmin;
+      z-index: 1;
+}
+.paws .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 2vmin 5vmin 2vmin 5vmin;
+      
+
+}
+.paws .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 2vmin 5vmin 2vmin 5vmin;
+}
+
+.paws .box4-1 {
+      grid-area: box4-1;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 2vmin 5vmin 2vmin 5vmin;
+}
+
+.video-border {
+      border: 2px solid #FEC72E;
+      border-radius: 10vmin;
+      color: #FEC72E;
+      padding: 2vmin 2vmin 2vmin 2vmin;
+      transition: 0.5s ease;
+}
+
+.video-border:hover {
+      border: 2px solid #FEC72E;
+      background: #FEC72E;
+      border-radius: 10vmin;
+      color: #FFFFFF;
+      padding: 2vmin 2vmin 2vmin 2vmin;
+}
+
+.video-border:active {
+      border: 2px solid #121111;
+      background: #121111;
+      border-radius: 10vmin;
+      color: #FFFFFF;
+      padding: 2vmin 2vmin 2vmin 2vmin;
+}
+
+.paws .box4-2 {
+      grid-area: box4-2;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 2vmin 5vmin 2vmin 5vmin;
+}
+
+.prototype-border {
+      border: 2px solid #FEC72E;
+      border-radius: 10vmin;
+      color: #FEC72E;
+      padding: 2vmin 2vmin 2vmin 2vmin;
+      transition: 0.5s ease;
+}
+.prototype-border:hover {
+      border: 2px solid #FEC72E;
+      background: #FEC72E;
+      border-radius: 10vmin;
+      color: #FFFFFF;
+      padding: 2vmin 2vmin 2vmin 2vmin;
+}
+
+.prototype-border:active {
+      border: 2px solid #121111;
+      background: #121111;
+      border-radius: 10vmin;
+      color: #FFFFFF;
+      padding: 2vmin 2vmin 2vmin 2vmin;
+}
+
+.prototype-border {
+      border: 2px solid #FEC72E;
+      border-radius: 10vmin;
+      color: #FEC72E;
+      padding: 2vmin 2vmin 2vmin 2vmin;
+}
+
+
+.paws .box5 {
+      grid-area: box5;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.paws .box6 {
+      grid-area: box6;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.paws .box7 {
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+}
+.paws .box8 {
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 5vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+
+}
+.paws .box9 {
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+
+}
+.paws .box10 {
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 5vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+}
+.paws .box11 {
+      grid-area: box11;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 9vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 5vmin;
+      opacity: 50%;
+}
+.paws .box12 {
+      grid-area: box12;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.paws .box13 {
+      grid-area: box13;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+.paws .box14 {
+      grid-area: box14;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20vmin 5vmin 20vmin 5vmin;
+}
+
+@media screen and (max-width: 900px) {
+      .paws {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-areas: 
+            "box1"
+            "box2"
+            "box3"
+            "box4"
+            "box4-1"
+            "box4-2"
+            "box5"
+            "box6"
+            "box7"
+            "box8"
+            "box9"
+            "box10"
+            "box11"
+            "box12"
+            "box13"
+            "box14"; 
+      }
+      .paws .box1 {
+      font-size: 15px;
+}
+      .paws .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 5vmin;
+      }
+      .paws .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 0vmin 5vmin 20vmin 5vmin;
+      }
+      .paws .box6 {
+      grid-area: box6;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+      .paws .box7 {
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5vmin;
+}
+.paws .box8 {
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+
+}
+.paws .box9 {
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+}
+.paws .box10 {
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+}
+.paws .box14 {
+      font-size: 10px;
+}
+}
+
+/*---------lingo racer----------*/
+
+.lingo {
+      overflow-x: hidden;
+      color: #121111;
+      display: grid;
+      background: #F4EDE4;
+      grid-template-columns: 50% 50%;
+      /grid-template-rows: 1fr 1fr;
+      grid-template-areas: 
+            "box1 box1"
+            "box2 box2"
+            "box3 box3"
+            "box4 box4"
+            "box5 box6"
+            "box7 box8"
+            "box9 box10"
+            "box11 box11"
+            "box12 box13"
+            "box14 box14"; 
+}
+
+.lingo img {
+      width: 100%;
+}
+
+.lingo .box1 {
+      grid-area: box1;
+      padding: 5vmin;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: 100;
+      font-size: 3vmin;
+}
+
+.lingo .box2 {
+      color: #3F2EAF;
+      grid-area: box2;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: "regular";
+      font-size: 12vmin;
+      align-items: center;
+      text-align: center;
+      line-height: 1.2;
+      padding: 15vmin 5vmin 2vmin 5vmin;
+      z-index: 1;
+}
+.lingo .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 2vmin 5vmin 2vmin 5vmin;
+      
+
+}
+.lingo .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 2vmin 5vmin 20vmin 5vmin;
+}
+
+
+.lingo .box5 {
+      background: #3F2EAF;
+      grid-area: box5;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.lingo .box6 {
+      background: #3F2EAF;
+      grid-area: box6;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.lingo .box7 {
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 15vmin 5vmin 5vmin 5vmin;
+}
+.lingo .box8 {
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 15vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+
+}
+.lingo .box9 {
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+
+}
+.lingo .box10 {
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 5vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+}
+.lingo .box11 {
+      grid-area: box11;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 9vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 5vmin;
+      opacity: 50%;
+}
+.lingo .box12 {
+      grid-area: box12;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.lingo .box13 {
+      grid-area: box13;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+.lingo .box14 {
+      grid-area: box14;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20vmin 5vmin 20vmin 5vmin;
+}
+
+@media screen and (max-width: 900px) {
+      .lingo {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-areas: 
+            "box1"
+            "box2"
+            "box3"
+            "box4"
+            "box5"
+            "box6"
+            "box7"
+            "box8"
+            "box9"
+            "box10"
+            "box11"
+            "box12"
+            "box13"
+            "box14"; 
+      }
+      .lingo .box1 {
+      font-size: 15px;
+}
+      .lingo .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 5vmin;
+      }
+      .lingo .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 0vmin 5vmin 20vmin 5vmin;
+      }
+      .lingo .box6 {
+      grid-area: box6;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+      .lingo .box7 {
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15vmin;
+}
+      .lingo .box8 {
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+
+}
+      .lingo .box9 {
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 15vmin;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+}
+      .lingo .box10 {
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+}
+      .lingo .box14 {
+      font-size: 10px;
+}
+}
+
+/*---------melbourne----------*/
+
+.mel {
+      overflow-x: hidden;
+      color: #121111;
+      display: grid;
+      background: #F4EDE4;
+      grid-template-columns: 50% 50%;
+      /grid-template-rows: 1fr 1fr;
+      grid-template-areas: 
+            "box1 box1"
+            "box2 box2"
+            "box3 box3"
+            "box4 box4"
+            "box5 box5"
+            "box7 box8"
+            "box9 box10"
+            "box11 box11"
+            "box12 box13"
+            "box13-add box13-add"
+            "box14 box14"; 
+}
+
+.mel img {
+      width: 100%;
+}
+
+.mel .box1 {
+      grid-area: box1;
+      padding: 5vmin;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: 100;
+      font-size: 3vmin;
+}
+
+.mel .box2 {
+      grid-area: box2;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: "regular";
+      font-size: 12vmin;
+      align-items: center;
+      text-align: center;
+      line-height: 1.2;
+      padding: 10vmin 5vmin 0vmin 5vmin;
+      z-index: 1;
+      color: #6F9B5C;
+}
+.mel .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 10vmin 5vmin 2vmin 5vmin;
+      
+
+}
+.mel .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 2vmin 5vmin 20vmin 5vmin;
+}
+.mel .box5 {
+      grid-area: box5;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.mel .box7 {
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 15vmin 5vmin 5vmin 5vmin;
+}
+.mel .box8 {
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 15vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+
+}
+.mel .box9 {
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+
+}
+.mel .box10 {
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 5vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+}
+.mel .box11 {
+      grid-area: box11;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 9vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 5vmin;
+      opacity: 50%;
+}
+.mel .box12 {
+      grid-area: box12;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.mel .box13 {
+      grid-area: box13;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.mel .box14 {
+      grid-area: box14;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20vmin 5vmin 20vmin 5vmin;
+}
+
+@media screen and (max-width: 900px) {
+      .mel {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-areas: 
+            "box1"
+            "box2"
+            "box3"
+            "box4"
+            "box5"
+            "box7"
+            "box8"
+            "box9"
+            "box10"
+            "box11"
+            "box12"
+            "box13"
+            "box14"; 
+      }
+      .mel .box1 {
+      font-size: 15px;
+}
+      .mel .box2 {
+      font-size: 10vmin;
+}
+      .mel .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 5vmin;
+      }
+      .mel .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 0vmin 5vmin 20vmin 5vmin;
+      }
+      .mel .box6 {
+      grid-area: box6;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+      .mel .box7 {
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5vmin;
+}
+      .mel .box8 {
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+
+}
+      .mel .box9 {
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+}
+      .mel .box10 {
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+}
+      .mel .box14 {
+      font-size: 10px;
+}
+}
+
+/*---------sgm----------*/
+
+.sgm {
+      overflow-x: hidden;
+      color: #121111;
+      display: grid;
+      background: #F4EDE4;
+      grid-template-columns: 50% 50%;
+      /grid-template-rows: 1fr 1fr;
+      grid-template-areas: 
+            "box1 box1"
+            "box2 box2"
+            "box3 box3"
+            "box4 box4"
+            "box5 box6"
+            "box7 box8"
+            "box9 box10"
+            "box11 box11"
+            "box12 box13"
+            "box13-add box13-add"
+            "box14 box14"; 
+}
+
+.sgm img {
+      width: 100%;
+}
+
+.sgm .box1 {
+      grid-area: box1;
+      padding: 5vmin;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: 100;
+      font-size: 3vmin;
+}
+
+.sgm .box2 {
+      grid-area: box2;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: "regular";
+      font-size: 12vmin;
+      align-items: center;
+      text-align: center;
+      line-height: 1.2;
+      padding: 10vmin 5vmin 0vmin 5vmin;
+      z-index: 1;
+      color: #07478B;
+}
+.sgm .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 10vmin 5vmin 2vmin 5vmin;
+      
+
+}
+.sgm .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 2vmin 5vmin 20vmin 5vmin;
+}
+.sgm .box5 {
+      background: white;
+      grid-area: box5;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.sgm .box6 {
+      grid-area: box6;
+      background: white;
+}
+
+.sgm .box7 {
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 15vmin 5vmin 5vmin 5vmin;
+}
+.sgm .box8 {
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 15vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+
+}
+.sgm .box9 {
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+
+}
+.sgm .box10 {
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 5vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+}
+.sgm .box11 {
+      grid-area: box11;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 9vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 5vmin;
+      opacity: 50%;
+}
+.sgm .box12 {
+      background: white;
+      grid-area: box12;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.sgm .box13 {
+      background: white;
+      grid-area: box13;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.sgm .box14 {
+      grid-area: box14;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20vmin 5vmin 20vmin 5vmin;
+}
+
+@media screen and (max-width: 900px) {
+      .sgm {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-areas: 
+            "box1"
+            "box2"
+            "box3"
+            "box4"
+            "box5"
+            "box7"
+            "box8"
+            "box9"
+            "box10"
+            "box11"
+            "box12"
+            "box13"
+            "box14"; 
+      }
+      .sgm .box1 {
+      font-size: 15px;
+}
+      .sgm .box2 {
+      font-size: 10vmin;
+}
+      .sgm .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      line-height: 1.2;
+      padding: 5vmin 15vmin 5vmin 15vmin;
+      }
+      .sgm .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 0vmin 5vmin 20vmin 5vmin;
+      }
+      .sgm .box6 {
+      grid-area: box6;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+      .sgm .box7 {
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15vmin 5vmin 5vmin 5vmin;
+}
+      .sgm .box8 {
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+
+}
+      .sgm .box9 {
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+}
+      .sgm .box10 {
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+}
+      .sgm .box14 {
+      font-size: 10px;
+}
+}
+
+/*---------pumpkin----------*/
+#black-cursor {
+      border: 2px solid #FFFFFF; 
+}
+
+#black-cursor:active {
+      border: 20px solid #FFFFFF; 
+}
+
+.pumpkin {
+      overflow-x: hidden;
+      color: #FFFFFF;
+      display: grid;
+      background-image: url(pumpkin-bg.png);
+      background-repeat: repeat;
+      background-size: 50vmin;
+      background-color: #191919;
+      grid-template-columns: 50% 50%;
+      grid-template-areas: 
+            "box1 box1"
+            "box2 box2"
+            "box3 box3"
+            "box4 box4"
+            "box4-1 box4-1"
+            "box7 box8"
+            "box9 box10"
+            "box11 box11"
+            "box12 box13"
+            "box14 box14"; 
+}
+
+.pumpkin img {
+      width: 100%;
+}
+
+.pumpkin .box1 {
+      grid-area: box1;
+      padding: 5vmin;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: 100;
+      font-size: 3vmin;
+}
+
+#game-back {
+      color: #FFFFFF;
+}
+
+.pumpkin .box2 {
+      grid-area: box2;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: "regular";
+      font-size: 12vmin;
+      align-items: center;
+      text-align: center;
+      line-height: 1.2;
+      padding: 10vmin 5vmin 0vmin 5vmin;
+      z-index: 1;
+      color: #C32727;
+}
+.pumpkin .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 10vmin 5vmin 2vmin 5vmin;
+      
+
+}
+.pumpkin .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 2vmin 5vmin 5vmin 5vmin;
+}
+
+.pumpkin .box4-1 {
+      background: #191919;
+      grid-area: box4-1;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 15vmin 5vmin 15vmin 5vmin;
+}
+
+.game-border {
+      border: 2px solid #C32727;
+      border-radius: 10vmin;
+      color: #C32727;
+      padding: 2vmin 2vmin 2vmin 2vmin;
+      transition: 0.5s ease;
+}
+
+.game-border:hover {
+      border: 2px solid #C32727;
+      background: #C32727;
+      border-radius: 10vmin;
+      color: #FFFFFF;
+      padding: 2vmin 2vmin 2vmin 2vmin;
+}
+
+.game-border:active {
+      border: 2px solid #121111;
+      background: #121111;
+      border-radius: 10vmin;
+      color: #FFFFFF;
+      padding: 2vmin 2vmin 2vmin 2vmin;
+}
+
+.pumpkin .box7 {
+      background: #191919;
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 15vmin 5vmin 5vmin 5vmin;
+}
+.pumpkin .box8 {
+      background: #191919;
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 15vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+
+}
+.pumpkin .box9 {
+      background: #191919;
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+
+}
+.pumpkin .box10 {
+      background: #191919;
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 5vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+}
+.pumpkin .box11 {
+      background: #191919;
+      grid-area: box11;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 9vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 5vmin;
+}
+
+.pumpkin .box11 .project-title {
+      opacity: 50%;
+}
+
+
+.pumpkin .box12 {
+      background: #191919;
+      grid-area: box12;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.pumpkin .box13 {
+      background: #191919;
+      grid-area: box13;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.pumpkin .box14 {
+      background: #191919;
+      grid-area: box14;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20vmin 5vmin 20vmin 5vmin;
+}
+
+@media screen and (max-width: 900px) {
+      .pumpkin {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-areas: 
+            "box1"
+            "box2"
+            "box3"
+            "box4"
+            "box4-1"
+            "box5"
+            "box7"
+            "box8"
+            "box9"
+            "box10"
+            "box11"
+            "box12"
+            "box13"
+            "box14"; 
+      }
+      .pumpkin .box1 {
+      font-size: 15px;
+            mix-blend-mode: difference;
+}
+      .pumpkin .box2 {
+      font-size: 10vmin;
+}
+      .pumpkin .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      line-height: 1.2;
+      padding: 5vmin 15vmin 5vmin 15vmin;
+      }
+      .pumpkin .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 0vmin 5vmin 20vmin 5vmin;
+      }
+      .pumpkin .box6 {
+      grid-area: box6;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+      .pumpkin .box7 {
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15vmin 5vmin 5vmin 5vmin;
+}
+      .pumpkin .box8 {
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+
+}
+      .pumpkin .box9 {
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+}
+      .pumpkin .box10 {
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+}
+      .pumpkin .box14 {
+      font-size: 10px;
+}
+}
+
+/*---------cabaret----------*/
+#black-cursor {
+      border: 2px solid #FFFFFF; 
+}
+
+#black-cursor:active {
+      border: 20px solid #FFFFFF; 
+}
+
+.cabaret {
+      overflow-x: hidden;
+      color: #FFFFFF;
+      display: grid;
+      background-color: #191919;
+      grid-template-columns: 50% 50%;
+      grid-template-areas: 
+            "box1 box1"
+            "box2 box2"
+            "box3 box3"
+            "box4 box4"
+            "box4-1 box4-1"
+            "box5 box5"
+            "box7 box8"
+            "box9 box10"
+            "box11 box11"
+            "box11-1 box11-1"
+            "box12 box13"
+            "box14 box14"; 
+}
+
+.cabaret img {
+      width: 100%;
+}
+
+.cabaret .box1 {
+      grid-area: box1;
+      padding: 5vmin;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: 100;
+      font-size: 3vmin;
+}
+
+#game-back {
+      color: #FFFFFF;
+}
+
+.cabaret .box2 {
+      grid-area: box2;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: "regular";
+      font-size: 16vmin;
+      align-items: center;
+      text-align: center;
+      line-height: 1.2;
+      padding: 10vmin 5vmin 0vmin 5vmin;
+      z-index: 1;
+      color: #C32727;
+}
+.cabaret .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 10vmin 5vmin 2vmin 5vmin;
+      
+
+}
+.cabaret .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 2vmin 5vmin 5vmin 5vmin;
+}
+
+.cabaret .box4-1 {
+      background: #191919;
+      grid-area: box4-1;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 15vmin 5vmin 15vmin 5vmin;
+}
+
+.game-border {
+      border: 2px solid #C32727;
+      border-radius: 10vmin;
+      color: #C32727;
+      padding: 2vmin 2vmin 2vmin 2vmin;
+      transition: 0.5s ease;
+}
+
+.game-border:hover {
+      border: 2px solid #C32727;
+      background: #C32727;
+      border-radius: 10vmin;
+      color: #FFFFFF;
+      padding: 2vmin 2vmin 2vmin 2vmin;
+}
+
+.game-border:active {
+      border: 2px solid #121111;
+      background: #121111;
+      border-radius: 10vmin;
+      color: #FFFFFF;
+      padding: 2vmin 2vmin 2vmin 2vmin;
+}
+
+.cabaret .box5 {
+      background: #191919;
+      grid-area: box5;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.cabaret .box7 {
+      background: #191919;
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 15vmin 5vmin 5vmin 5vmin;
+}
+.cabaret .box8 {
+      background: #191919;
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 15vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+
+}
+.cabaret .box9 {
+      background: #191919;
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+
+}
+.cabaret .box10 {
+      background: #191919;
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 5vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+}
+.cabaret .box11 {
+      background: #191919;
+      grid-area: box11;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 9vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 5vmin;
+}
+
+.cabaret .box11 .project-title {
+      opacity: 50%;
+}
+
+.cabaret .box11-1 {
+      background: #191919;
+      grid-area: box11-1;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+.cabaret .box12 {
+      background: #191919;
+      grid-area: box12;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.cabaret .box13 {
+      background: #191919;
+      grid-area: box13;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.cabaret .box14 {
+      background: #191919;
+      grid-area: box14;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20vmin 5vmin 20vmin 5vmin;
+}
+
+@media screen and (max-width: 900px) {
+      .cabaret {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-areas: 
+            "box1"
+            "box2"
+            "box3"
+            "box4"
+            "box4-1"
+            "box5"
+            "box7"
+            "box8"
+            "box9"
+            "box10"
+            "box11"
+            "box11-1"
+            "box12"
+            "box13"
+            "box14"; 
+      }
+      .cabaret .box1 {
+      font-size: 15px;
+            mix-blend-mode: difference;
+}
+      .cabaret .box2 {
+      font-size: 13vmin;
+}
+      .cabaret .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      line-height: 1.2;
+      padding: 15vmin 15vmin 5vmin 15vmin;
+      }
+      .cabaret .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 0vmin 5vmin 2vmin 5vmin;
+      }
+      .cabaret .box6 {
+      grid-area: box6;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+      .cabaret .box7 {
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15vmin 5vmin 5vmin 5vmin;
+}
+      .cabaret .box8 {
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+
+}
+      .cabaret .box9 {
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+}
+      .cabaret .box10 {
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+}
+      .cabaret .box14 {
+      font-size: 10px;
+}
+}
+
+/*---------oasis----------*/
+#black-cursor {
+      border: 2px solid #FFFFFF; 
+}
+
+#black-cursor:active {
+      border: 20px solid #FFFFFF; 
+}
+
+.oasis {
+      overflow-x: hidden;
+      color: #FFFFFF;
+      display: grid;
+      background-color: #191919;
+      grid-template-columns: 50% 50%;
+      grid-template-areas: 
+            "box1 box1"
+            "box2 box2"
+            "box3 box3"
+            "box4 box4"
+            "box4-1 box4-1"
+            "box5 box5"
+            "box7 box8"
+            "box9 box10"
+            "box11 box11"
+            "box11-1 box11-1"
+            "box12 box13"
+            "box14 box14"; 
+}
+
+.oasis img {
+      width: 100%;
+}
+
+.oasis .box1 {
+      grid-area: box1;
+      padding: 5vmin;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: 100;
+      font-size: 3vmin;
+}
+
+#game-back {
+      color: #FFFFFF;
+}
+
+.oasis .box2 {
+      grid-area: box2;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: "regular";
+      font-size: 19vmin;
+      align-items: center;
+      text-align: center;
+      line-height: 1.2;
+      padding: 10vmin 5vmin 0vmin 5vmin;
+      z-index: 1;
+      color: #9B9992;
+}
+.oasis .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 10vmin 5vmin 2vmin 5vmin;
+      
+
+}
+.oasis .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 2vmin 5vmin 5vmin 5vmin;
+}
+
+.oasis .box4-1 {
+      grid-area: box4-1;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 15vmin 5vmin 15vmin 5vmin;
+}
+
+#oasis-game-button {
+      border: 2px solid #9B9992;
+      border-radius: 10vmin;
+      color: #9B9992;
+      padding: 2vmin 2vmin 2vmin 2vmin;
+      transition: 0.5s ease;
+}
+
+#oasis-game-button:hover {
+      border: 2px solid #9B9992;
+      background: #9B9992;
+      border-radius: 10vmin;
+      color: #FFFFFF;
+      padding: 2vmin 2vmin 2vmin 2vmin;
+}
+
+#oasis-game-button:active {
+      background: #9B9992;
+      border-radius: 10vmin;
+      color: #FFFFFF;
+      padding: 2vmin 2vmin 2vmin 2vmin;
+}
+
+.oasis .box5 {
+      background: #191919;
+      grid-area: box5;
+      padding: 5vmin 35vmin 5vmin 35vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.oasis .box7 {
+      background: #191919;
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 15vmin 5vmin 5vmin 5vmin;
+}
+.oasis .box8 {
+      background: #191919;
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 15vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+
+}
+.oasis .box9 {
+      background: #191919;
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+
+}
+.oasis .box10 {
+      background: #191919;
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 5vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+}
+.oasis .box11 {
+      background: #191919;
+      grid-area: box11;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 9vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 5vmin;
+}
+
+.oasis .box11 .project-title {
+      opacity: 50%;
+}
+
+.oasis .box11-1 {
+      background: #191919;
+      grid-area: box11-1;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+.oasis .box12 {
+      background: #191919;
+      grid-area: box12;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.oasis .box13 {
+      background: #191919;
+      grid-area: box13;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.oasis .box14 {
+      background: #191919;
+      grid-area: box14;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20vmin 5vmin 20vmin 5vmin;
+}
+
+@media screen and (max-width: 900px) {
+      .oasis {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-areas: 
+            "box1"
+            "box2"
+            "box3"
+            "box4"
+            "box4-1"
+            "box5"
+            "box7"
+            "box8"
+            "box9"
+            "box10"
+            "box11"
+            "box11-1"
+            "box12"
+            "box13"
+            "box14"; 
+      }
+      .oasis .box1 {
+      font-size: 15px;
+            mix-blend-mode: difference;
+}
+      .oasis .box2 {
+      font-size: 13vmin;
+}
+      .oasis .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      line-height: 1.2;
+      padding: 15vmin 15vmin 5vmin 15vmin;
+      }
+      .oasis .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 0vmin 5vmin 2vmin 5vmin;
+      }
+      .oasis .box5 {
+      grid-area: box5;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+      .oasis .box7 {
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15vmin 5vmin 5vmin 5vmin;
+}
+      .oasis .box8 {
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+
+}
+      .oasis .box9 {
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+}
+      .oasis .box10 {
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+}
+      .oasis .box14 {
+      font-size: 10px;
+}
+}
+
+/*---------cave----------*/
+#black-cursor {
+      border: 2px solid #FFFFFF; 
+}
+
+#black-cursor:active {
+      border: 20px solid #FFFFFF; 
+}
+
+.cave {
+      overflow-x: hidden;
+      color: #FFFFFF;
+      display: grid;
+      background-color: #191919;
+      grid-template-columns: 50% 50%;
+      grid-template-areas: 
+            "box1 box1"
+            "box2 box2"
+            "box3 box3"
+            "box4 box4"
+            "box4-1 box4-1"
+            "box5 box5"
+            "box7 box8"
+            "box9 box10"
+            "box11 box11"
+            "box11-1 box11-1"
+            "box12 box13"
+            "box14 box14"; 
+}
+
+.cave img {
+      width: 100%;
+}
+
+.cave .box1 {
+      grid-area: box1;
+      padding: 5vmin;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: 100;
+      font-size: 3vmin;
+}
+
+#game-back {
+      color: #FFFFFF;
+}
+
+.cave .box2 {
+      grid-area: box2;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: "regular";
+      font-size: 14vmin;
+      align-items: center;
+      text-align: center;
+      line-height: 1.2;
+      padding: 10vmin 5vmin 0vmin 5vmin;
+      z-index: 1;
+      color: #07478B;
+}
+.cave .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 10vmin 5vmin 2vmin 5vmin;
+      
+
+}
+.cave .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 2vmin 5vmin 20vmin 5vmin;
+}
+
+.cave .box5 {
+      background: #191919;
+      grid-area: box5;
+      padding: 5vmin 5vmin 5vmin 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.cave .box7 {
+      background: #191919;
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 15vmin 5vmin 5vmin 5vmin;
+}
+.cave .box8 {
+      background: #191919;
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 15vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+
+}
+.cave .box9 {
+      background: #191919;
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+
+}
+.cave .box10 {
+      background: #191919;
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 5vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+}
+.cave .box11 {
+      background: #191919;
+      grid-area: box11;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 9vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 5vmin;
+}
+
+.cave .box11 .project-title {
+      opacity: 50%;
+}
+
+.cave .box12 {
+      grid-area: box12;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.cave .box13 {
+      grid-area: box13;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.cave .box14 {
+      grid-area: box14;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20vmin 5vmin 20vmin 5vmin;
+}
+
+@media screen and (max-width: 900px) {
+      .cave {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-areas: 
+            "box1"
+            "box2"
+            "box3"
+            "box4"
+            "box5"
+            "box7"
+            "box8"
+            "box9"
+            "box10"
+            "box11"
+            "box12"
+            "box13"
+            "box14"; 
+      }
+      .cave .box1 {
+      font-size: 15px;
+            mix-blend-mode: difference;
+}
+      .cave .box2 {
+      font-size: 13vmin;
+}
+      .cave .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      line-height: 1.2;
+      padding: 15vmin 15vmin 5vmin 15vmin;
+      }
+      .cave .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 0vmin 5vmin 20vmin 5vmin;
+      }
+      .cave .box5 {
+      grid-area: box5;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+      .cave .box7 {
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15vmin 5vmin 5vmin 5vmin;
+}
+      .cave .box8 {
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+
+}
+      .cave .box9 {
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+}
+      .cave .box10 {
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+}
+      .cave .box14 {
+      font-size: 10px;
+}
+}
+
+/*---------neon----------*/
+#black-cursor {
+      border: 2px solid #FFFFFF; 
+}
+
+#black-cursor:active {
+      border: 20px solid #FFFFFF; 
+}
+
+.neon {
+      overflow-x: hidden;
+      color: #FFFFFF;
+      display: grid;
+      background-color: #191919;
+      grid-template-columns: 50% 50%;
+      grid-template-areas: 
+            "box1 box1"
+            "box2 box2"
+            "box3 box4"
+            "box4-1 box4-1"
+            "box5 box5"
+            "box7 box8"
+            "box9 box10"
+            "box11 box11"
+            "box11-1 box11-1"
+            "box12 box13"
+            "box14 box14"; 
+}
+
+.neon img {
+      width: 100%;
+}
+
+.neon .box1 {
+      grid-area: box1;
+      padding: 5vmin;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: 100;
+      font-size: 3vmin;
+}
+
+#game-back {
+      color: #FFFFFF;
+}
+
+.neon .box2 {
+      grid-area: box2;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: "regular";
+      font-size: 14vmin;
+      align-items: center;
+      text-align: center;
+      line-height: 1.2;
+      padding: 10vmin 5vmin 0vmin 5vmin;
+      z-index: 1;
+      color: #CB281B;
+}
+.neon .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 2vmin 5vmin 20vmin 5vmin;
+      
+
+}
+.neon .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 2vmin 5vmin 20vmin 5vmin;
+}
+
+.neon .box5 {
+      background: #191919;
+      grid-area: box5;
+      padding: 5vmin 5vmin 5vmin 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.neon .box7 {
+      background: #191919;
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 15vmin 5vmin 5vmin 5vmin;
+}
+.neon .box8 {
+      background: #191919;
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 15vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+
+}
+.neon .box9 {
+      background: #191919;
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+
+}
+.neon .box10 {
+      background: #191919;
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 5vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+}
+.neon .box11 {
+      background: #191919;
+      grid-area: box11;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 9vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 5vmin;
+}
+
+.neon .box11 .project-title {
+      opacity: 50%;
+}
+
+.neon .box12 {
+      grid-area: box12;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.neon .box13 {
+      grid-area: box13;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.neon .box14 {
+      grid-area: box14;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20vmin 5vmin 20vmin 5vmin;
+}
+
+@media screen and (max-width: 900px) {
+      .neon {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-areas: 
+            "box1"
+            "box2"
+            "box3"
+            "box4"
+            "box5"
+            "box7"
+            "box8"
+            "box9"
+            "box10"
+            "box11"
+            "box12"
+            "box13"
+            "box14"; 
+      }
+      .neon .box1 {
+      font-size: 15px;
+            mix-blend-mode: difference;
+}
+      .neon .box2 {
+      font-size: 13vmin;
+}
+      .neon .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      line-height: 1.2;
+      padding: 15vmin 15vmin 5vmin 15vmin;
+      }
+      .neon .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 0vmin 5vmin 20vmin 5vmin;
+      }
+      .neon .box5 {
+      grid-area: box5;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+      .neon .box7 {
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15vmin 5vmin 5vmin 5vmin;
+}
+      .neon .box8 {
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+
+}
+      .neon .box9 {
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+}
+      .neon .box10 {
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+}
+      .neon .box14 {
+      font-size: 10px;
+}
+}
+
+/*---------neon----------*/
+
+.misty {
+      overflow-x: hidden;
+      color: #121111;
+      display: grid;
+      background: #F4EDE4;
+      grid-template-columns: 50% 50%;
+      grid-template-areas: 
+            "box1 box1"
+            "box2 box2"
+            "box3 box4"
+            "box5 box6"
+            "box7 box8"
+            "box9 box10"
+            "box11 box11"
+            "box12 box13"
+            "box14 box14"; 
+}
+
+.misty img {
+      width: 100%;
+}
+
+.misty .box1 {
+      grid-area: box1;
+      padding: 5vmin;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: 100;
+      font-size: 3vmin;
+}
+
+.misty .box2 {
+      grid-area: box2;
+      font-family: 'Optima Medium', sans-serif;
+      font-weight: "regular";
+      font-size: 14vmin;
+      align-items: center;
+      text-align: center;
+      line-height: 1.2;
+      padding: 10vmin 5vmin 0vmin 5vmin;
+      z-index: 1;
+      color: #3C8639;
+}
+.misty .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 2vmin 5vmin 20vmin 5vmin;
+      
+
+}
+.misty .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 2vmin 5vmin 20vmin 5vmin;
+}
+
+.misty .box5 {
+      background: white;
+      grid-area: box5;
+      padding: 5vmin 5vmin 5vmin 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.misty .box6 {
+      background: white;
+      grid-area: box6;
+      padding: 5vmin 5vmin 5vmin 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.misty .box7 {
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 15vmin 5vmin 5vmin 5vmin;
+}
+.misty .box8 {
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 15vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+
+}
+.misty .box9 {
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+
+}
+.misty .box10 {
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7vmin;
+      display: flex;
+      padding: 5vmin 15vmin 20vmin 5vmin;
+      line-height: 1.5;
+}
+.misty .box11 {
+      grid-area: box11;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 9vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 5vmin;
+}
+
+.misty .box11 .project-title {
+      opacity: 50%;
+}
+
+.misty .box12 {
+      background: white;
+      grid-area: box12;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.misty .box13 {
+      background: white;
+      grid-area: box13;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.misty .box14 {
+      grid-area: box14;
+      font-family: 'Optima Reg',sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20vmin 5vmin 20vmin 5vmin;
+}
+
+@media screen and (max-width: 900px) {
+      .misty {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-areas: 
+            "box1"
+            "box2"
+            "box3"
+            "box4"
+            "box5"
+            "box7"
+            "box8"
+            "box9"
+            "box10"
+            "box11"
+            "box12"
+            "box13"
+            "box14"; 
+      }
+      .misty .box1 {
+      font-size: 15px;
+}
+      .misty .box2 {
+      font-size: 13vmin;
+}
+      .misty .box3 {
+      grid-area: box3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      line-height: 1.2;
+      padding: 15vmin 15vmin 5vmin 15vmin;
+      }
+      .misty .box4 {
+      grid-area: box4;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      padding: 0vmin 5vmin 20vmin 5vmin;
+      }
+      .misty .box5 {
+      grid-area: box5;
+      padding: 5vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+      .misty .box7 {
+      grid-area: box7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15vmin 5vmin 5vmin 5vmin;
+}
+      .misty .box8 {
+      grid-area: box8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+
+}
+      .misty .box9 {
+      grid-area: box9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4vmin;
+      display: flex;
+      padding: 5vmin;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+}
+      .misty .box10 {
+      grid-area: box10;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      display: flex;
+      padding: 5vmin 10vmin 20vmin 10vmin;
+      line-height: 1.5;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+}
+      .misty .box14 {
+      font-size: 10px;
+}
+}
