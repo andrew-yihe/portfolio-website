@@ -55,8 +55,8 @@
 }
 
 .cursor {
-      width: 2.5rem;
-      height: 2.5rem;
+      width: 4rem;
+      height: 4rem;
       border: 2px solid #121111;
       border-radius: 50%;
       position: fixed;
@@ -110,13 +110,14 @@
       top: 50%;
       left: 50%;
       font-family: 'Roboto', sans-serif;
-      font-size: 8vmin;
+      font-size: 5vmin;
       transform: translate(-50%, -50%);
       color: #121111;
 }
 
 .loading .counter h1:after {
       content: "%";
+      font-size: 3vmin;
 }
 
 #loading-shade {
@@ -129,25 +130,10 @@
       transition: 0.8s ease-in;
 }
 
-#EnterBall2 {
-      overflow: hidden;
-      position: absolute;
-      height: 75vmin;
-      width: 75vmin;
-      background: white;
-      border-radius: 50%;
-      border: 1px solid #707070;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1; 
-      opacity: 0;
-}
 
 
 /* ------------section---------------*/
 section {
-      overflow: scroll;
       width: 100%;
       height: 100vh;
       padding: 10vh 10vw;
@@ -188,14 +174,9 @@ section {
 }
 
 #name:hover{
-      opacity: 50%;
       transform: translate(-50%, -50%) scale(1.1, 1.1);
 }
 
-#name:hover ~ #hoverline{
-      width: 50vw;
-      height: 0.5vw;
-}
 
 .menu{
       font-style: italic;
@@ -327,17 +308,6 @@ section {
       z-index: 1;
 }
 
-#hoverline{
-      position: absolute;
-      background-color: #121111;
-      width: 15vw;
-      height: 1vw;
-      right: 0%;
-      bottom: 25vmin;
-      transition: 0.7s ease;
-      /display: none;
-      z-index: 1;
-}
 
 @keyframes BGcolour {
       0% {
@@ -365,11 +335,12 @@ section {
       position: absolute;
       height: 75vmin;
       width: 75vmin;
-      background: white;
+      background: rgba(255, 255, 255, 0);
       border-radius: 50%;
       border: 1px solid #c2c2c2;
       z-index: 0; 
       opacity: 0;
+      mix-blend-mode: difference;
       left: ;
 }
 
@@ -425,7 +396,7 @@ section {
       font-weight: 100;
       z-index: 1;
       font-size: 2.5vw;
-      line-height: 200%;
+      line-height: 400%;
       text-align: center;
       display: none;
       opacity: 0;
@@ -476,11 +447,12 @@ section {
       border: 1px solid #c2c2c2;
       height: 100vmin;
       width: 100vmin;
-      background: white;
+      background: rgba(255, 255, 255, 0);
       border-radius: 50%;
       z-index: 0; 
       bottom: -100vmin;
-      transition: 2s ease;
+      transition: 0.3s ease-out;
+      mix-blend-mode: difference;
       opacity: 0;
 
 }
@@ -491,6 +463,7 @@ section {
       .one-page {
             height: 100vh;
             width: 100vw;
+            overflow:scroll;
       }
       
       .loading {
@@ -502,10 +475,6 @@ section {
       }
 
       .cursor {
-            display: none;
-      }
-      
-      #hoverline {
             display: none;
       }
       
