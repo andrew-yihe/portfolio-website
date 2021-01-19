@@ -457,6 +457,26 @@ section {
 
 }
 
+#transition-close-left {
+      z-index: 100;
+      position: absolute;
+      background: #FFFFFF;
+      height: 100%;
+      width: 0%;
+      left: 0;
+      transition: 0.5 ease-out;
+}
+
+#transition-close-right {
+      z-index: 100;
+      position: absolute;
+      background: #FFFFFF;
+      height: 100%;
+      width: 0%;
+      right: 0;
+      transition: 0.5 ease-out;
+}
+
 /*Mobile*/
 @media screen and (max-width: 600px) {
       

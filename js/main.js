@@ -9,6 +9,9 @@ let ball = document.querySelector("#ball");
 let social = document.querySelectorAll(".contactLinks a");
 let socialBox = document.querySelector("#contactText");
 let projectMenu = document.querySelector("#projectMenuContainer");
+let projectItem1 = document.querySelector("#projectmenu1");
+let projectItem2 = document.querySelector("#projectmenu2");
+let projectItem3 = document.querySelector("#projectmenu3");
 
 let $loader = $( '.loading' );
 
@@ -109,6 +112,33 @@ function showProjectMenu () {
       gsap.to(socialBox, {x: "0"});
 }
 
+function Project1Clicked () {
+      gsap.to("#transition-close-left", {width: "50%"});
+      gsap.to("#transition-close-right", {width: "50%"});
+      console.log("clicked");
+      setTimeout(() => {
+            window.location.href="vr.html";
+      }, 500);
+}
+
+function Project2Clicked () {
+      gsap.to("#transition-close-left", {width: "50%"});
+      gsap.to("#transition-close-right", {width: "50%"});
+      console.log("clicked");
+      setTimeout(() => {
+            window.location.href="visual.html";
+      }, 500);
+}
+
+function Project3Clicked () {
+      gsap.to("#transition-close-left", {width: "50%"});
+      gsap.to("#transition-close-right", {width: "50%"});
+      console.log("clicked");
+      setTimeout(() => {
+            window.location.href="game.html";
+      }, 500);
+}
+
 const StartLoading = function () {
 
       var counter = 0;
@@ -148,6 +178,11 @@ homeLink.addEventListener("click", showHome);
 contactLink.addEventListener("click", showContact);
 projectLink.addEventListener("click", showProjectMenu);
 aboutLink.addEventListener("click", showAbout);
+
+projectItem1.addEventListener("click", Project1Clicked);
+projectItem2.addEventListener("click", Project2Clicked);
+projectItem3.addEventListener("click", Project3Clicked);
+
 
 text.addEventListener("mouseleave", () => {
       mouseCursor.classList.remove("cursor-grow");
