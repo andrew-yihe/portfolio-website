@@ -3,75 +3,111 @@
 <html>
 
 <head>
-      <title>Game Design</title>
+      <title>Game Development</title>
+      <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       <link rel="stylesheet" media="screen" href="css/style.css" />
       <script src="js/aos.js"></script>
       <link rel="stylesheet" href="css/aos.css">
+      <script src="js/focus-visible.js"></script>
+      <script src="js/lax.min.js"></script>
 </head>
 
-<body class="one-page">
-      
-  <div class="cursor"></div>    
-    
-  <main id="project-page-wrapper">
-        <div class="projectTitle" id="visualTitle"><div data-aos="fade-right" data-aos-duration="1000">Game Design</div></div>
-        
-        <div class="projectNav">
-              <a class="aNav" id="backHome" href="index.html" data-aos="fade-in">Home</a>
-              <a class="aNav" id="NextButton" href="vr.html" data-aos="fade-in">VR/AR</a>
-        </div>
-        
-        <div class="container" data-aos="fade-up" data-aos-duration="800">  
-              <div onclick="window.location.href='cabaret.html';" class="block game-1" id="game-block-1">
-                    <h1>Cabaret</h1>
-              </div>
-              <div onclick="window.location.href='pumpkin.html';" class="block game-2" id="game-block-2">
-                    <h1>Whac-A-Pumpkin!</h1>
-              </div>
-              <div onclick="window.location.href='oasis.html';" class="block game-3" id="game-block-3">
-                    <h1>OASIS</h1>
-              </div>
-              <div onclick="window.location.href='cave.html';" class="block game-4" id="game-block-4">
-                    <h1>Crystal Cave</h1>
-              </div>
-              <div onclick="window.location.href='neon.html';" class="block game-5" id="game-block-5">
-                    <h1>Neon Street 229</h1>
-              </div>
-              <div onclick="window.location.href='misty.html';" class="block game-6" id="game-block-6">
-                    <h1>Misty Island</h1>
-              </div>
-        </div>
-
-  </main>
-      
-      <div class="mobile-project-page">
-            <div class="mobile-title" data-aos="fade-up" data-aos-duration="1000">Game Design</div>
-            <div class="mobile-menu" onclick="window.location.href='index.html';" data-aos="fade-right" data-aos-duration="1000">Home</div>
-            <div class="mobile-menu" onclick="window.location.href='vr.html';" data-aos="fade-left" data-aos-duration="1000">VR/AR</div>
-            <div class="mobile-menu" onclick="window.location.href='game.html';" data-aos="fade-right" data-aos-duration="1000">Visual Design</div>
-            <div class="mobile-empty"></div>
-            <div class="img-container" id="game-img1" onclick="window.location.href='cabaret.html';"></div>
-            <div class="img-disc">Cabaret</div>
-            <div class="img-container" id="game-img2" onclick="window.location.href='pumpkin.html';"></div>
-            <div class="img-disc">Whac-A-Pumpkin!</div>
-            <div class="img-container" id="game-img3" onclick="window.location.href='oasis.html';"></div>
-            <div class="img-disc">OASIS</div>
-            <div class="img-container" id="game-img4" onclick="window.location.href='cave.html';"></div>
-            <div class="img-disc">Crystal Cave</div>
-            <div class="img-container" id="game-img5" onclick="window.location.href='neon.html';"></div>
-            <div class="img-disc">Neon Street 229</div>
-            <div class="img-container" id="game-img6" onclick="window.location.href='misty.html';"></div>
-            <div class="img-disc">Misty Island</div>
-            <div class="mobile-empty-btm"></div>
-      </div>
+<body class="ProjectFullPage">
+  <div class="cursor"></div>
+  <div id="transition-open-left"></div>
+  <div id="transition-open-right"></div>
+      <main class="project-intro">
+            <div class="block-1">
+                  <a class="menu-button">Menu</a>
+                  <div class="dropdown-menu">
+                        <li onclick="window.location.href='vr.html'">VR/AR</li>
+                        <li onclick="window.location.href='visual.html'">Visual Design</li>
+                        <li onclick="window.location.href='game.html'">Game Development</li>
+                        <li onclick="window.location.href='index.html'">Home</li>
+                  </div>
+            </div>
+            <div class="block-2"><a class="home-button" onclick="window.location.href='index.html'">Andrew Gan</a></div>
+            <div class="block-3" data-aos="fade-in">Game Dev</div>
+            <div class="block-4">
+                  <div class="project-list-box">
+                  <li class="project-list" id="cabaret-button" onclick="window.location.href='cabaret.html'"><a class="title-bold">Cabaret</a>: 3D first-person psychological horror interactive novel</li>
+                  <li class="project-list" id="pumpkin-button" onclick="window.location.href='pumpkin.html'"><a class="title-bold">Whac-A-Pumpkin!</a>: Web-based mini game</li>
+                  <li class="project-list" id="oasis-button" onclick="window.location.href='oasis.html'"><a class="title-bold">OASIS</a>: First-person advanture puzzle game</li>
+                  <li class="project-list" id="cave-button" onclick="window.location.href='cave.html'"><a class="title-bold">Crystal Cave</a>: Interactive nature environment design</li>
+                  <li class="project-list" id="neon-button" onclick="window.location.href='neon.html'"><a class="title-bold">Neon Street 229</a>: 3D environment design</li>
+                  <li class="project-list" id="misty-button" onclick="window.location.href='misty.html'"><a class="title-bold">Misty Island</a>: 3D environment design</li>
+            </div>
+            </div>
+            <div class="block-5" id="block-5"></div>
 
 
+            <div class="mobile-header">
+                  <a class="menu-button">Menu</a>
+                  <a class="home-button" onclick="window.location.href='index.html'">Andrew Gan</a>
+                  <div class="dropdown-menu">
+                        <li onclick="window.location.href='vr.html'">VR/AR</li>
+                        <li onclick="window.location.href='visual.html'">Visual Design</li>
+                        <li onclick="window.location.href='game.html'">Game Development</li>
+                        <li onclick="window.location.href='index.html'">Home</li>
+                  </div>
+            </div>
+
+            <div class="mobile-block-6">
+
+                  <div class="item-thumbnail"><img onclick="window.location.href='cabaret.html'" src="css/cabaret.PNG"/></div>
+                  <div class="item-title">
+                        <p class="title-bold">Cabaret</p>
+                        <p>3D first-person psychological horror interactive novel</p>
+                  </div>
+
+                  <div class="item-thumbnail" data-aos="fade-in"><img onclick="window.location.href='pumpkin.html'" src="css/pumpkin.png"/></div>
+                  <div class="item-title" data-aos="fade-in">
+                        <p class="title-bold">Whac-A-Pumpkin!</p>
+                        <p>Web-based mini game</p>
+                  </div>
+
+                  <div class="item-thumbnail" data-aos="fade-in"><img onclick="window.location.href='oasis.html'" src="css/oasis.jpg"/></div>
+                  <div class="item-title" data-aos="fade-in">
+                        <p class="title-bold">OASIS</p>
+                        <p>First-person advanture puzzle game</p>
+                  </div>
+
+                  <div class="item-thumbnail" data-aos="fade-in"><img onclick="window.location.href='cave.html'" src="css/cave.png"/></div>
+                  <div class="item-title" data-aos="fade-in">
+                        <p class="title-bold">Crystal Cave</p>
+                        <p>Interactive nature environment design</p>
+                  </div>
+
+                  <div class="item-thumbnail" data-aos="fade-in"><img onclick="window.location.href='neon.html'" src="css/neon.JPG"/></div>
+                  <div class="item-title" data-aos="fade-in">
+                        <p class="title-bold">Neon Street 229</p>
+                        <p>3D environment design</p>
+                  </div>
+
+                  <div class="item-thumbnail" data-aos="fade-in"><img onclick="window.location.href='misty.html'" src="css/island.jpeg"/></div>
+                  <div class="item-title" data-aos="fade-in">
+                        <p class="title-bold">Misty Island</p>
+                        <p>3D environment design</p>
+                  </div>
+
+                  <div class="empty-div"></div>
+            </div>
+
+            
+      </main>
+
+
+
+
+      <script src="js/page-transition.js"></script>
       <script src="js/jquery-3.4.1.min.js"></script>
       <script src="js/gsap.min.js"></script>
-      <script src="js/index.js"></script>
-      <script src="js/horizontal-scroll.js"></script>
-      <script src="js/page-transition.js"></script>
+      <script src="js/main.js"></script>
+      <script src="js/project-menu.js"></script>
+      <script src="js/project-page.js"></script>
+      
 
 </body>
+
 </html>

@@ -4,64 +4,91 @@
 
 <head>
       <title>VR/AR</title>
+      <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       <link rel="stylesheet" media="screen" href="css/style.css" />
       <script src="js/aos.js"></script>
       <link rel="stylesheet" href="css/aos.css">
+      <script src="js/focus-visible.js"></script>
+      <script src="js/lax.min.js"></script>
 </head>
 
-<body class="one-page">
+<body class="ProjectFullPage">
+  <div class="cursor"></div>
+  <div id="transition-open-left"></div>
+  <div id="transition-open-right"></div>
+      <main class="project-intro">
+            <div class="block-1">
+                  <a class="menu-button">Menu</a>
+                  <div class="dropdown-menu">
+                        <li onclick="window.location.href='vr.html'">VR/AR</li>
+                        <li onclick="window.location.href='visual.html'">Visual Design</li>
+                        <li onclick="window.location.href='game.html'">Game Development</li>
+                        <li onclick="window.location.href='index.html'">Home</li>
+                  </div>
+            </div>
+            <div class="block-2"><a class="home-button" onclick="window.location.href='index.html'">Andrew Gan</a></div>
+            <div class="block-3">VR/AR</div>
+            <div class="block-4">
+                  <div class="project-list-box">
+                  <li class="project-list" id="elliot-button" onclick="window.location.href='elliot.html'"><a class="title-bold">The Adventures of Elliot</a>: AR educational storybook</li>
+                  <li class="project-list" id="lighthouse-button" onclick="window.location.href='lighthouse.html'"><a class="title-bold">The Lighthouse</a>: VR interactive environment design</li>
+                  <li class="project-list" id="ball-button" onclick="window.location.href='cyber.html'"><a class="title-bold">Cybercity</a>: AR roll-a-ball mobile game</li>
+                  <li class="project-list" id="mind-button" onclick="window.location.href='mind.html'"><a class="title-bold">Mind Space</a>: Virtual meditation soundscape</li>
+            </div>
+            </div>
+            <div class="block-5" id="block-5"></div>
+
+            <div class="mobile-header">
+                  <a class="menu-button">Menu</a>
+                  <a class="home-button" onclick="window.location.href='index.html'">Andrew Gan</a>
+                  <div class="dropdown-menu">
+                        <li onclick="window.location.href='vr.html'">VR/AR</li>
+                        <li onclick="window.location.href='visual.html'">Visual Design</li>
+                        <li onclick="window.location.href='game.html'">Game Development</li>
+                        <li onclick="window.location.href='index.html'">Home</li>
+                  </div>
+            </div>
+
+            <div class="mobile-block-6">
+
+                  <div class="item-thumbnail"><img onclick="window.location.href='elliot.html'" src="css/elliot.jpg"/></div>
+                  <div class="item-title">
+                        <p class="title-bold">The Adventures of Elliot</p>
+                        <p>AR educational storybook</p>
+                  </div>
+
+                  <div class="item-thumbnail" data-aos="fade-in"><img onclick="window.location.href='lighthouse.html'" src="css/lighthouse.png"/></div>
+                  <div class="item-title" data-aos="fade-in">
+                        <p class="title-bold">The Lighthouse</p>
+                        <p>VR interactive environment design</p>
+                  </div>
+
+                  <div class="item-thumbnail" data-aos="fade-in"><img onclick="window.location.href='cyber.html'" src="css/cyber.png"/></div>
+                  <div class="item-title" data-aos="fade-in">
+                        <p class="title-bold">Cybercity</p>
+                        <p>AR roll-a-ball mobile game</p>
+                  </div>
+
+                  <div class="item-thumbnail" data-aos="fade-in"><img onclick="window.location.href='mind.html'" src="css/mind.png"/></div>
+                  <div class="item-title" data-aos="fade-in">
+                        <p class="title-bold">Mind Space</p>
+                        <p>Virtual meditation soundscape</p>
+                  </div>
+
+                  <div class="empty-div"></div>
+            </div>
+
+      </main>
       
-  <div class="cursor"></div>    
-    
-  <main id="project-page-wrapper">
-        <div class="projectTitle"><div data-aos="fade-right" data-aos-duration="1000">VR/AR</div></div>
-        
-        <div class="projectNav">
-              <a class="aNav" id="backHome" href="index.html" data-aos="fade-in">Home</a>
-              <a class="aNav" id="NextButton" href="visual.html" data-aos="fade-in">Visual Design</a>
-        </div>
-        
-        <div class="container" data-aos="fade-up" data-aos-duration="800">  
-              <div onclick="window.location.href='elliot.html';" class="block vr-1" id="vr-block-1">
-                    <h1>The Adventures of Elliot</h1>
-              </div>
-              <div onclick="window.location.href='lighthouse.html';" class="block vr-2" id="vr-block-2">
-                    <h1>The Lighthouse</h1>
-              </div>
-              <div onclick="window.location.href='cyber.html';" class="block vr-3" id="vr-block-3">
-                    <h1>Cybercity</h1>
-              </div>
-              <div onclick="window.location.href='mind.html';" class="block vr-4" id="vr-block-4">
-                    <h1>Mind Space</h1>
-              </div>
-        </div>
-
-  </main>
-      
-      <div class="mobile-project-page">
-            <div class="mobile-title" data-aos="fade-up" data-aos-duration="1000">VR/AR</div>
-            <div class="mobile-menu" onclick="window.location.href='index.html';" data-aos="fade-right" data-aos-duration="1000">Home</div>
-            <div class="mobile-menu" onclick="window.location.href='visual.html';" data-aos="fade-left" data-aos-duration="1000">Visual Design</div>
-            <div class="mobile-menu" onclick="window.location.href='game.html';" data-aos="fade-right" data-aos-duration="1000">Game Design</div>
-            <div class="mobile-empty"></div>
-            <div class="img-container" id="vr-img1" onclick="window.location.href='elliot.html';"></div>
-            <div class="img-disc">The Adventures of Elliot</div>
-            <div class="img-container" id="vr-img2" onclick="window.location.href='lighthouse.html';"></div>
-            <div class="img-disc">The Lighthouse</div>
-            <div class="img-container" id="vr-img3" onclick="window.location.href='cyber.html';"></div>
-            <div class="img-disc">Cybercity</div>
-            <div class="img-container" id="vr-img4" onclick="window.location.href='mind.html';"></div>
-            <div class="img-disc">Mind Space</div>
-            <div class="mobile-empty-btm"></div>
-      </div>
-
-
+      <script src="js/page-transition.js"></script>
       <script src="js/jquery-3.4.1.min.js"></script>
       <script src="js/gsap.min.js"></script>
-      <script src="js/index.js"></script>
-      <script src="js/horizontal-scroll.js"></script>
-      <script src="js/page-transition.js"></script>
+      <script src="js/main.js"></script>
+      <script src="js/project-menu.js"></script>
+      <script src="js/project-page.js"></script>
+      
 
 </body>
+
 </html>
