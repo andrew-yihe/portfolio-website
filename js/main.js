@@ -212,12 +212,10 @@ name.addEventListener("mouseover", () => {
 
 projectMenu.addEventListener("mouseleave", () => {
       mouseCursor.classList.remove("cursor-grow");
-      window.addEventListener("click", cursorClick);
 })
 
 projectMenu.addEventListener("mouseover", () => {
       mouseCursor.classList.add("cursor-grow");
-      window.removeEventListener("click", cursorClick);
 })
 
 socialBox.addEventListener("mouseleave", () => {
