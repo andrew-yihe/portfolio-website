@@ -57,7 +57,7 @@
 .cursor {
       width: 4rem;
       height: 4rem;
-      border: 2px solid #121111;
+      border: 2px solid #ff0000;
       border-radius: 50%;
       position: fixed;
       top:var (--y,0);
@@ -594,7 +594,41 @@ section {
       right: 0;
 }
 
+.deco-ball {
+      position: absolute;
+      width: 90vmin;
+      height: 90vmin;
+      border: #707070 solid 1px;
+      background-color: #FFFFFF;
+      border-radius: 50%;
+      transform: translate(-50%, 50%);
+      left: 50%;
+      bottom: 50%;
+      z-index: 1;
+      transition: 0.5s ease;
+}
 
+.deco-ball-2 {
+      position: absolute;
+      width: 90vmin;
+      height: 90vmin;
+      border: #707070 solid 1px;
+      background-color: #FFFFFF;
+      border-radius: 50%;
+      transform: translate(-50%, 50%);
+      left: 50%;
+      bottom: 50%;
+      z-index: 0;
+      transition: 0.5s ease;
+}
+
+.ball1-move {
+      transform: translate(-55%, 50%);
+}
+
+.ball2-move {
+      transform: translate(-45%, 50%);
+}
 
 .ProjectFullPage {
       overflow: hidden;
@@ -611,25 +645,24 @@ section {
       background: #FFFFFF;
       font-family: 'HelveticaNeue', sans-serif;
       grid-template-columns: 50% 50%;
-      grid-template-rows: 0.2fr 0.2fr 3fr;
+      grid-template-rows: 1fr 1.8fr 1fr;
       grid-template-areas: 
-            "block-1 block-2"
-            "block-3 block-3"
+            "block-2 block-1"
             "block-4 block-5"
+            "block-3 block-3"
             ; 
 }
 
 .block-1 {
       position: relative;
-      border: #707070 solid 1px;
       grid-area: block-1;
       font-family: 'HelveticaNeue Bold', sans-serif;
       display: flex;
-      justify-content: flex-start;
+      justify-content: flex-end;
       align-items: center;
-      padding: 2vmin;
+      padding: 8vmin;
       font-weight: 100;
-      font-size: 3vmin;
+      font-size: 10vmin;
 }
 
 .menu-button {
@@ -656,7 +689,7 @@ section {
       border: #707070 solid 2px;
       background-color: #FFFFFF;
       position: absolute;
-      left: 0;
+      right: 8vmin;
       bottom: 0;
       transform: translate(0, 100%);
       padding: 5vmin 2vmin 5vmin 2vmin;
@@ -670,6 +703,7 @@ section {
       -ms-user-select: none; /* Internet Explorer/Edge */
       user-select: none;
       display: none;
+      z-index: 5;
       
 }
 
@@ -690,15 +724,14 @@ section {
 }
 
 .block-2 {
-      border: #707070 solid 1px;
       grid-area: block-2;
-      font-family: 'HelveticaNeue Bold', sans-serif;
+      font-family: 'Optima Reg', sans-serif;
       display: flex;
-      justify-content: flex-end;
+      justify-content: flex-start;
       align-items: center;
-      padding: 2vmin;
+      padding: 8vmin;
       font-weight: 100;
-      font-size: 3vmin;
+      font-size: 4vmin;
 }
 
 .home-button {
@@ -723,33 +756,37 @@ section {
 }
 
 .block-3 {
-      border: #707070 solid 1px;
       grid-area: block-3;
       padding: 0vmin;
       font-family: 'Optima Reg', sans-serif;
       display: flex;
-      padding: 3vmin;
-      justify-content: center;
+      padding: 8vmin;
+      justify-content: flex-end;
       align-items: center;
       font-weight: 100;
-      font-size: 2.5vmin;
+      font-size: 4vmin;
 }
 
 .block-4 {
-      border: #707070 solid 1px;
       grid-area: block-4;
       display: flex;
+      overflow: scroll;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 0vmin;
+      padding: 4vmin 8vmin 8vmin 8vmin;
+      margin: 5vmin 0vmin 5vmin 0vmin;
       font-weight: 100;
-      font-size: 2vmin;
+      font-size: 5vmin;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;
+      z-index: 2;
+}
+
+.block-4::-webkit-scrollbar {
+      display: none;
 }
 
 .project-list-box {
-      width: 50%;
-      line-height: 1.2;
+      line-height: 1;
 }
 
 .project-list {
@@ -771,17 +808,28 @@ section {
 
 .block-5 {
       position: relative;
-      border: #707070 solid 1px;
       grid-area: block-5;
-      padding: 0vmin;
+      padding: 0vmin 0vmin 0vmin 0vmin;
+      margin: 10vmin 8vmin 10vmin 8vmin;
       font-family: 'Optima Medium', sans-serif;
       font-weight: 100;
       font-size: 3vmin;
       background-size: cover;
-      background-position: center;
+      background-position: bottom;
+      background-color: #121111;
       transition: 0.4s ease;
       display: block;
+      -webkit-animation: test 10s infinite; /* Chrome, Safari, Opera */
+      animation: test 10s infinite;
+      z-index: 3;
 }
+
+@-webkit-keyframes test {
+      50% {background-position: top;}
+  }
+@keyframes test {
+      50% {background-position: top;}
+  }
 
 .mobile-header {
       grid-area: header;
@@ -801,6 +849,7 @@ section {
 .mobile-block-6 {
       grid-area: block-6;
       display: none;
+      z-index: 5;
 }
 
 @media screen and (max-width: 600px) {
@@ -808,6 +857,10 @@ section {
             overflow: scroll;
             height: auto; 
             overflow-x: hidden;
+      }
+
+      .deco-ball, .deco-ball-2 {
+            display: none;
       }
 
       .mobile-block-6 {
@@ -907,7 +960,7 @@ section {
       position: absolute;
       height: 100vmin;
       width: 100vmin;
-      background: white;
+      border: #707070 solid 1px;
       z-index: 0;
       border-radius: 50%;
       transform: translate(-50%, -50%);
@@ -919,22 +972,24 @@ section {
 }
 
 .back-button {
+      font-family: 'HelveticaNeue Bold', sans-serif;
+      font-size: 5vmin;
       text-decoration: none;
-      color: #121111;
+      color: #FFFFFF;
+      /transition: 0.2s ease;
+      z-index: 50;
 }
 
 .back-button:hover {
-      transform: translate(-50%, 0%) scale(3, 1.5);
-      opacity: 0.5;
+      color: red;
+      text-decoration: line-through;
 }
 .back-button:active {
-      color: white;
-      transform: translate(-50%, 0%) scale(1, 0.5);
+      color: red;
 }
 
 .next-button:hover {
       text-decoration:line-through;
-      
 }
 
 
@@ -942,11 +997,10 @@ section {
 
 .elliot {
       overflow-x: hidden;
-      color: #121111;
+      color: #FFFFFF;
       display: grid;
-      background: #F4EDE4;
+      background: #121111;
       grid-template-columns: 50% 50%;
-      /grid-template-rows: 1fr 1fr;
       grid-template-areas: 
             "box1 box1"
             "box2 box2"
@@ -961,6 +1015,7 @@ section {
 
 .elliot img {
       width: 100%;
+      background-color: #383838;
 }
 
 .elliot .box1 {
@@ -1172,11 +1227,10 @@ section {
 
 .lighthouse {
       overflow-x: hidden;
-      color: #121111;
+      color: #FFFFFF;
       display: grid;
-      background: #F4EDE4;
+      background: #121111;
       grid-template-columns: 50% 50%;
-      /grid-template-rows: 1fr 1fr;
       grid-template-areas: 
             "box1 box1"
             "box2 box2"
@@ -1432,9 +1486,9 @@ section {
 
 .cyber {
       overflow-x: hidden;
-      color: #121111;
+      color: #FFFFFF;
       display: grid;
-      background: #FFFFFF;
+      background: #121111;
       grid-template-columns: 50% 50%;
       grid-template-areas: 
             "box1 box1"
@@ -1494,7 +1548,6 @@ section {
       padding: 5vmin 5vmin 20vmin 5vmin;
 }
 .cyber .box5 {
-      background: #000000;
       grid-area: box5;
       padding: 5vmin;
       display: flex;
@@ -1503,7 +1556,6 @@ section {
 }
 
 .cyber .box6 {
-      background: #000000;
       grid-area: box6;
       padding: 5vmin;
       display: flex;
@@ -1556,7 +1608,6 @@ section {
       opacity: 50%;
 }
 .cyber .box12 {
-      background: #000000;
       grid-area: box12;
       padding: 5vmin;
       display: flex;
@@ -1565,7 +1616,6 @@ section {
 }
 
 .cyber .box13 {
-      background: #000000;
       grid-area: box13;
       padding: 5vmin;
       display: flex;
@@ -1683,11 +1733,10 @@ section {
 
 .mind {
       overflow-x: hidden;
-      color: #121111;
+      color: #FFFFFF;
       display: grid;
-      background: #F4EDE4;
+      background: #121111;
       grid-template-columns: 50% 50%;
-      /grid-template-rows: 1fr 1fr;
       grid-template-areas: 
             "box1 box1"
             "box2 box2"
@@ -1717,7 +1766,7 @@ section {
       grid-area: box2;
       font-family: 'Optima Medium', sans-serif;
       font-weight: "regular";
-      font-size: 8vmin;
+      font-size: 10vmin;
       align-items: center;
       text-align: center;
       line-height: 1.2;
@@ -1931,11 +1980,10 @@ section {
 
 .paws {
       overflow-x: hidden;
-      color: #121111;
+      color: #FFFFFF;
       display: grid;
-      background: #F4EDE4;
+      background: #121111;
       grid-template-columns: 50% 50%;
-      /grid-template-rows: 1fr 1fr;
       grid-template-areas: 
             "box1 box1"
             "box2 box2"
@@ -2260,9 +2308,9 @@ section {
 
 .lingo {
       overflow-x: hidden;
-      color: #121111;
+      color: #FFFFFF;
       display: grid;
-      background: #F4EDE4;
+      background: #121111;
       grid-template-columns: 50% 50%;
       /grid-template-rows: 1fr 1fr;
       grid-template-areas: 
@@ -2291,7 +2339,7 @@ section {
 }
 
 .lingo .box2 {
-      color: #3F2EAF;
+      color: #6f62c4;
       grid-area: box2;
       font-family: 'Optima Medium', sans-serif;
       font-weight: "regular";
@@ -2327,7 +2375,6 @@ section {
 
 
 .lingo .box5 {
-      background: #3F2EAF;
       grid-area: box5;
       padding: 5vmin;
       display: flex;
@@ -2336,7 +2383,6 @@ section {
 }
 
 .lingo .box6 {
-      background: #3F2EAF;
       grid-area: box6;
       padding: 5vmin;
       display: flex;
@@ -2512,11 +2558,10 @@ section {
 
 .mel {
       overflow-x: hidden;
-      color: #121111;
+      color: #FFFFFF;
       display: grid;
-      background: #F4EDE4;
+      background: #121111;
       grid-template-columns: 50% 50%;
-      /grid-template-rows: 1fr 1fr;
       grid-template-areas: 
             "box1 box1"
             "box2 box2"
@@ -2756,11 +2801,10 @@ section {
 
 .sgm {
       overflow-x: hidden;
-      color: #121111;
+      color: #FFFFFF;
       display: grid;
-      background: #F4EDE4;
+      background: #121111;
       grid-template-columns: 50% 50%;
-      /grid-template-rows: 1fr 1fr;
       grid-template-areas: 
             "box1 box1"
             "box2 box2"
@@ -2797,7 +2841,7 @@ section {
       line-height: 1.2;
       padding: 10vmin 5vmin 0vmin 5vmin;
       z-index: 1;
-      color: #07478B;
+      color: #6d93bd;
 }
 .sgm .box3 {
       grid-area: box3;
@@ -2822,7 +2866,6 @@ section {
       padding: 2vmin 5vmin 20vmin 5vmin;
 }
 .sgm .box5 {
-      background: white;
       grid-area: box5;
       padding: 5vmin;
       display: flex;
@@ -2832,7 +2875,6 @@ section {
 
 .sgm .box6 {
       grid-area: box6;
-      background: white;
 }
 
 .sgm .box7 {
@@ -2880,7 +2922,6 @@ section {
       opacity: 50%;
 }
 .sgm .box12 {
-      background: white;
       grid-area: box12;
       padding: 5vmin;
       display: flex;
@@ -2889,7 +2930,6 @@ section {
 }
 
 .sgm .box13 {
-      background: white;
       grid-area: box13;
       padding: 5vmin;
       display: flex;
@@ -3018,10 +3058,9 @@ section {
       overflow-x: hidden;
       color: #FFFFFF;
       display: grid;
-      background-image: url(pumpkin-bg.png);
       background-repeat: repeat;
       background-size: 50vmin;
-      background-color: #191919;
+      background-color: #121111;
       grid-template-columns: 50% 50%;
       grid-template-areas: 
             "box1 box1"
@@ -3088,7 +3127,6 @@ section {
 }
 
 .pumpkin .box4-1 {
-      background: #191919;
       grid-area: box4-1;
       font-family: 'Montserrat', sans-serif;
       font-size: 2vmin;
@@ -3124,7 +3162,6 @@ section {
 }
 
 .pumpkin .box7 {
-      background: #191919;
       grid-area: box7;
       font-family: 'Montserrat', sans-serif;
       font-size: 4vmin;
@@ -3132,7 +3169,6 @@ section {
       padding: 15vmin 5vmin 5vmin 5vmin;
 }
 .pumpkin .box8 {
-      background: #191919;
       grid-area: box8;
       font-family: 'Montserrat', sans-serif;
       font-size: 1.7vmin;
@@ -3142,7 +3178,6 @@ section {
 
 }
 .pumpkin .box9 {
-      background: #191919;
       grid-area: box9;
       font-family: 'Montserrat', sans-serif;
       font-size: 4vmin;
@@ -3151,7 +3186,6 @@ section {
 
 }
 .pumpkin .box10 {
-      background: #191919;
       grid-area: box10;
       font-family: 'Montserrat', sans-serif;
       font-size: 1.7vmin;
@@ -3160,7 +3194,6 @@ section {
       line-height: 1.5;
 }
 .pumpkin .box11 {
-      background: #191919;
       grid-area: box11;
       font-family: 'Optima Reg',sans-serif;
       font-size: 9vmin;
@@ -3178,7 +3211,6 @@ section {
 
 
 .pumpkin .box12 {
-      background: #191919;
       grid-area: box12;
       padding: 5vmin;
       display: flex;
@@ -3187,7 +3219,6 @@ section {
 }
 
 .pumpkin .box13 {
-      background: #191919;
       grid-area: box13;
       padding: 5vmin;
       display: flex;
@@ -3196,7 +3227,6 @@ section {
 }
 
 .pumpkin .box14 {
-      background: #191919;
       grid-area: box14;
       font-family: 'Optima Reg',sans-serif;
       font-size: 2vmin;
@@ -3319,7 +3349,7 @@ section {
       overflow-x: hidden;
       color: #FFFFFF;
       display: grid;
-      background-color: #191919;
+      background-color: #121111;
       grid-template-columns: 50% 50%;
       grid-template-areas: 
             "box1 box1"
@@ -3388,7 +3418,6 @@ section {
 }
 
 .cabaret .box4-1 {
-      background: #191919;
       grid-area: box4-1;
       font-family: 'Montserrat', sans-serif;
       font-size: 2vmin;
@@ -3424,7 +3453,6 @@ section {
 }
 
 .cabaret .box5 {
-      background: #191919;
       grid-area: box5;
       padding: 5vmin;
       display: flex;
@@ -3433,7 +3461,6 @@ section {
 }
 
 .cabaret .box7 {
-      background: #191919;
       grid-area: box7;
       font-family: 'Montserrat', sans-serif;
       font-size: 4vmin;
@@ -3441,7 +3468,6 @@ section {
       padding: 15vmin 5vmin 5vmin 5vmin;
 }
 .cabaret .box8 {
-      background: #191919;
       grid-area: box8;
       font-family: 'Montserrat', sans-serif;
       font-size: 1.7vmin;
@@ -3451,7 +3477,6 @@ section {
 
 }
 .cabaret .box9 {
-      background: #191919;
       grid-area: box9;
       font-family: 'Montserrat', sans-serif;
       font-size: 4vmin;
@@ -3460,7 +3485,6 @@ section {
 
 }
 .cabaret .box10 {
-      background: #191919;
       grid-area: box10;
       font-family: 'Montserrat', sans-serif;
       font-size: 1.7vmin;
@@ -3469,7 +3493,6 @@ section {
       line-height: 1.5;
 }
 .cabaret .box11 {
-      background: #191919;
       grid-area: box11;
       font-family: 'Optima Reg',sans-serif;
       font-size: 9vmin;
@@ -3486,7 +3509,6 @@ section {
 }
 
 .cabaret .box11-1 {
-      background: #191919;
       grid-area: box11-1;
       padding: 5vmin;
       display: flex;
@@ -3494,7 +3516,6 @@ section {
       align-items: center;
 }
 .cabaret .box12 {
-      background: #191919;
       grid-area: box12;
       padding: 5vmin;
       display: flex;
@@ -3503,7 +3524,6 @@ section {
 }
 
 .cabaret .box13 {
-      background: #191919;
       grid-area: box13;
       padding: 5vmin;
       display: flex;
@@ -3512,7 +3532,6 @@ section {
 }
 
 .cabaret .box14 {
-      background: #191919;
       grid-area: box14;
       font-family: 'Optima Reg',sans-serif;
       font-size: 2vmin;
@@ -3636,7 +3655,7 @@ section {
       overflow-x: hidden;
       color: #FFFFFF;
       display: grid;
-      background-color: #191919;
+      background-color: #121111;
       grid-template-columns: 50% 50%;
       grid-template-areas: 
             "box1 box1"
@@ -3951,7 +3970,7 @@ section {
       overflow-x: hidden;
       color: #FFFFFF;
       display: grid;
-      background-color: #191919;
+      background-color: #121111;
       grid-template-columns: 50% 50%;
       grid-template-areas: 
             "box1 box1"
@@ -4020,7 +4039,6 @@ section {
 }
 
 .cave .box5 {
-      background: #191919;
       grid-area: box5;
       padding: 5vmin 5vmin 5vmin 5vmin;
       display: flex;
@@ -4029,7 +4047,6 @@ section {
 }
 
 .cave .box7 {
-      background: #191919;
       grid-area: box7;
       font-family: 'Montserrat', sans-serif;
       font-size: 4vmin;
@@ -4037,7 +4054,6 @@ section {
       padding: 15vmin 5vmin 5vmin 5vmin;
 }
 .cave .box8 {
-      background: #191919;
       grid-area: box8;
       font-family: 'Montserrat', sans-serif;
       font-size: 1.7vmin;
@@ -4047,7 +4063,6 @@ section {
 
 }
 .cave .box9 {
-      background: #191919;
       grid-area: box9;
       font-family: 'Montserrat', sans-serif;
       font-size: 4vmin;
@@ -4056,7 +4071,6 @@ section {
 
 }
 .cave .box10 {
-      background: #191919;
       grid-area: box10;
       font-family: 'Montserrat', sans-serif;
       font-size: 1.7vmin;
@@ -4065,7 +4079,6 @@ section {
       line-height: 1.5;
 }
 .cave .box11 {
-      background: #191919;
       grid-area: box11;
       font-family: 'Optima Reg',sans-serif;
       font-size: 9vmin;
@@ -4219,7 +4232,7 @@ section {
       overflow-x: hidden;
       color: #FFFFFF;
       display: grid;
-      background-color: #191919;
+      background-color: #121111;
       grid-template-columns: 50% 50%;
       grid-template-areas: 
             "box1 box1"
@@ -4287,7 +4300,6 @@ section {
 }
 
 .neon .box5 {
-      background: #191919;
       grid-area: box5;
       padding: 5vmin 5vmin 5vmin 5vmin;
       display: flex;
@@ -4296,7 +4308,6 @@ section {
 }
 
 .neon .box7 {
-      background: #191919;
       grid-area: box7;
       font-family: 'Montserrat', sans-serif;
       font-size: 4vmin;
@@ -4304,7 +4315,6 @@ section {
       padding: 15vmin 5vmin 5vmin 5vmin;
 }
 .neon .box8 {
-      background: #191919;
       grid-area: box8;
       font-family: 'Montserrat', sans-serif;
       font-size: 1.7vmin;
@@ -4314,7 +4324,6 @@ section {
 
 }
 .neon .box9 {
-      background: #191919;
       grid-area: box9;
       font-family: 'Montserrat', sans-serif;
       font-size: 4vmin;
@@ -4323,7 +4332,6 @@ section {
 
 }
 .neon .box10 {
-      background: #191919;
       grid-area: box10;
       font-family: 'Montserrat', sans-serif;
       font-size: 1.7vmin;
@@ -4332,7 +4340,6 @@ section {
       line-height: 1.5;
 }
 .neon .box11 {
-      background: #191919;
       grid-area: box11;
       font-family: 'Optima Reg',sans-serif;
       font-size: 9vmin;
@@ -4477,9 +4484,9 @@ section {
 
 .misty {
       overflow-x: hidden;
-      color: #121111;
+      color: #FFFFFF;
       display: grid;
-      background: #F4EDE4;
+      background: #121111;
       grid-template-columns: 50% 50%;
       grid-template-areas: 
             "box1 box1"
@@ -4541,7 +4548,6 @@ section {
 }
 
 .misty .box5 {
-      background: white;
       grid-area: box5;
       padding: 5vmin 5vmin 5vmin 5vmin;
       display: flex;
@@ -4550,7 +4556,6 @@ section {
 }
 
 .misty .box6 {
-      background: white;
       grid-area: box6;
       padding: 5vmin 5vmin 5vmin 5vmin;
       display: flex;
@@ -4607,7 +4612,6 @@ section {
 }
 
 .misty .box12 {
-      background: white;
       grid-area: box12;
       padding: 5vmin;
       display: flex;
@@ -4616,7 +4620,6 @@ section {
 }
 
 .misty .box13 {
-      background: white;
       grid-area: box13;
       padding: 5vmin;
       display: flex;

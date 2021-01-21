@@ -72,6 +72,9 @@ $(document).ready(function(){
 });
 
 let block5 = document.querySelector(".block-5");
+let enterZone = document.querySelector(".project-list-box");
+let decoBall1 = document.querySelector(".deco-ball");
+let decoBall2 = document.querySelector(".deco-ball-2");
 
 block5.addEventListener("mouseleave", () => {
     mouseCursor.classList.remove("cursor-grow");
@@ -82,3 +85,14 @@ block5.addEventListener("mouseover", () => {
     mouseCursor.classList.add("cursor-grow");
     window.removeEventListener("click", cursorClick);
 })
+
+enterZone.addEventListener("mouseleave", () => {
+    decoBall1.classList.remove("ball1-move");
+    decoBall2.classList.remove("ball2-move");
+})
+
+enterZone.addEventListener("mouseover", () => {
+    decoBall1.classList.add("ball1-move");
+    decoBall2.classList.add("ball2-move");
+})
+
