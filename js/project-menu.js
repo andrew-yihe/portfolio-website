@@ -1,4 +1,22 @@
+let mouseCursor = document.querySelector(".cursor");
+
+function cursorMove(e) {
+    mouseCursor.style.top = e.clientY + 'px';
+    mouseCursor.style.left = e.clientX + 'px';
+}
+
+function cursorClick () {
+    mouseCursor.classList.add("expand");
+    console.log("click");
+    setTimeout(() => {
+          mouseCursor.classList.remove("expand");
+    }, 500)
+}
+
 $(document).ready(function(){
+
+    window.addEventListener("mousemove", cursorMove);
+    window.addEventListener("click", cursorClick);
 
     gsap.to("#transition-open-left", {duration: 1, width: "0", ease: "power2"});
     gsap.to("#transition-open-right", {duration: 1, width: "0", ease: "power2"});
@@ -69,7 +87,12 @@ $(document).ready(function(){
         $("#block-5").css("background-image", "url(/css/island.jpeg)");
     });
 
+    new CircleType(document.getElementById('circle-text'));
+
 });
+
+
+
 
 let block5 = document.querySelector(".block-5");
 let enterZone = document.querySelector(".project-list-box");

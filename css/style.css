@@ -63,7 +63,7 @@
       top:var (--y,0);
       left:var (--x,0);
       transform: translate(-50%, -50%);
-      z-index: 10;
+      z-index: 100;
       pointer-events: none;
       transition: all 0.3s ease;
       transition-property: background, transform;
@@ -477,6 +477,30 @@ section {
       transition: 0.5 ease-out;
 }
 
+#circle-text-container {
+      position: absolute;
+      height: 15vmin;
+      width: 15vmin;
+      z-index: 5;
+      font-family: 'Optima Medium', sans-serif;
+      transition: 0.2s ease;
+      font-size: 2vmin;
+      bottom: 20vmin;
+      right: 8vmin;
+}
+
+#circle-text {
+      animation: rotate 10s infinite alternate-reverse linear;
+}
+
+@keyframes rotate{
+      0% {transform: rotate(350deg);}
+}
+
+#circle-text-container:hover {
+      color: #FF0000;
+}
+
 /*Mobile*/
 @media screen and (max-width: 600px) {
       
@@ -571,6 +595,10 @@ section {
             font-size: 16px;
             width: 70vmin;
             right: auto;
+      }
+
+      #circle-block-mobile {
+            display: none;
       }
 
 }
@@ -944,6 +972,20 @@ section {
             font-size: 6vmin;
       }
 
+      .circle-text-block {
+            position: relative;
+            padding: 20vmin;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+      }
+
+      #circle-text-container {
+            bottom: auto;
+            right: auto;
+            font-size: 5vmin;
+      }
+
       .empty-div {
             height: 50vmin;
       }
@@ -992,6 +1034,39 @@ section {
       text-decoration:line-through;
 }
 
+.Back2TopButton {
+      display: none;
+}
+
+.back-to-top {
+      position: fixed;
+      width: 10vmin;
+      height: 10vmin;
+      background-color: #FFFFFF;
+      border-radius: 50%;
+      bottom: 5vmin;
+      right: 5vmin;
+      background-image: url('arrow-up-sharp.svg');
+      background-size: contain;
+      z-index: 10;
+      transition: 0.2s ease;
+}
+
+.back-to-top:hover {
+      width: 15vmin;
+      height: 15vmin;
+}
+
+.back-to-top:active {
+      background-color: #FF0000;
+}
+
+@media screen and (max-width: 900px) {
+      .back-to-top {
+            width: 15vmin;
+            height: 15vmin;
+      }
+}
 
 /*---------elliot----------*/
 

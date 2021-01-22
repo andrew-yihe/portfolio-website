@@ -30,6 +30,23 @@ function cursorClick () {
       }, 500)
 }
 
+$(document).ready(function(){
+
+      console.log("loaded");
+
+      $(window).scroll(function(){
+            if($(this).scrollTop() > 100){
+                  $('.Back2TopButton').fadeIn();
+            } else{
+                  $('.Back2TopButton').fadeOut();
+            }
+      });
+      $('.back-to-top').click(function(){
+            $('html ,body').animate({scrollTop: 0}, 800);
+      });
+
+})
+
 function showAbout () {
       
       socialBox.style.opacity = "0";
@@ -172,16 +189,30 @@ const Loaded = function () {
 
 }
 
+window.onload=function(){
+      new CircleType(document.getElementById('circle-text'));
+    }
+      
+
+
 window.addEventListener("mousemove", cursorMove);
 window.addEventListener("click", cursorClick);
+
+
 homeLink.addEventListener("click", showHome);
+
+
 contactLink.addEventListener("click", showContact);
+
 projectLink.addEventListener("click", showProjectMenu);
+
 aboutLink.addEventListener("click", showAbout);
+
 
 projectItem1.addEventListener("click", Project1Clicked);
 projectItem2.addEventListener("click", Project2Clicked);
 projectItem3.addEventListener("click", Project3Clicked);
+
 
 
 text.addEventListener("mouseleave", () => {
@@ -228,6 +259,9 @@ socialBox.addEventListener("mouseover", () => {
       window.removeEventListener("click", cursorClick);
 })
 
+
+
 StartLoading();            
 Loaded();
+
 
