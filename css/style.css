@@ -838,26 +838,19 @@ section {
       position: relative;
       grid-area: block-5;
       padding: 0vmin 0vmin 0vmin 0vmin;
-      margin: 10vmin 8vmin 10vmin 8vmin;
+      margin: 0vmin 8vmin 0vmin 8vmin;
       font-family: 'Optima Medium', sans-serif;
       font-weight: 100;
       font-size: 3vmin;
-      background-size: cover;
-      background-position: bottom;
-      background-color: #121111;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: none;
       transition: 0.4s ease;
       display: block;
-      -webkit-animation: test 10s infinite; /* Chrome, Safari, Opera */
-      animation: test 10s infinite;
       z-index: 3;
 }
 
-@-webkit-keyframes test {
-      50% {background-position: top;}
-  }
-@keyframes test {
-      50% {background-position: top;}
-  }
 
 .mobile-header {
       grid-area: header;
